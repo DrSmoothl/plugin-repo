@@ -28,7 +28,7 @@
 1. 将插件文件复制到插件目录：
    ```
    plugins/
-   └── open_appliction_plugin
+   └── open_application_plugin
    ```
 
 2. 创建配置文件 `config.toml`：
@@ -45,7 +45,7 @@
 3. 在系统中注册插件：
    ```python
    # 在插件加载器中
-   from plugins.open_app_plugin import OpenApplicationPlugin
+   from plugins.open_application_plugin import OpenApplicationPlugin
    ```
 
 ## 使用指南
@@ -149,8 +149,8 @@ HINSTANCE ShellExecuteW(
 ### 开发贡献
 欢迎提交Pull Request：
 ```bash
-git clone https://github.com/your-repo/windows-app-launcher.git
-cd windows-app-launcher
+git clone https://github.com/biucols/plugin-repo.git
+cd plugin-repo
 # 创建新分支进行开发
 git checkout -b feature/new-enhancement
 ```

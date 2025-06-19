@@ -1,7 +1,7 @@
-# open_appliction_plugin - 配置文件
+# open_application_plugin - 配置文件
 # 通过用户指令打开电脑中的应用软件
 [plugin]
-name = "open_appliction_plugin"
+name = "open_application_plugin"
 version = "1.0.0"
 enabled = true
 description = "通过用户指令打开电脑中的应用软件"

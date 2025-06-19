@@ -344,7 +344,7 @@ class OpenAppCommand(BaseCommand):
 class OpenApplicationPlugin(BasePlugin):
     """打开应用插件主类"""
 
-    plugin_name = "open_appliction_plugin"
+    plugin_name = "open_application_plugin"
     plugin_description = "通过用户指令打开电脑中的应用软件"
     plugin_version = "1.0.0"
     plugin_author = "LMSS_AIOS"
