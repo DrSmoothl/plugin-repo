@@ -1,0 +1,23 @@
+{
+  "manifest_version": 1,
+  "name": "Windows端打开桌面应用插件",
+  "version": "1.0.0",
+  "description": "专门用于懒人在外面回家后却要玩游戏特别开发的插件",
+  "author": {
+    "name": "LMSS_AIOS",
+    "url": "https://github.com/biucols"
+  },
+  "license": "MIT",
+
+  "host_application": {
+    "min_version": "0.7.0",
+    "max_version": "0.8.0"
+  },
+  "homepage_url": "https://github.com/biucols",
+  "repository_url": "https://github.com/biucols/plugin-repo",
+  "keywords": ["ai","notes","openapp","code","snippet","developer"],
+  "categories": ["open_app"],
+
+
+  "default_locale": "CN"
+}

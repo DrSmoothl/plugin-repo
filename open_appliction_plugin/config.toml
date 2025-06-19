@@ -1,0 +1,22 @@
+# open_appliction_plugin - 配置文件
+# 通过用户指令打开电脑中的应用软件
+[plugin]
+name = "open_appliction_plugin"
+version = "1.0.0"
+enabled = true
+description = "通过用户指令打开电脑中的应用软件"
+[components]
+# 是否启用打开应用的Action
+enable_open_action = true
+# 是否启用打开应用的Command
+enable_open_command = true
+[open_app]
+# 名单类型：black（黑名单）或 white（白名单），默认黑名单
+list_type = "black"
+# 黑名单或白名单中的应用列表（应用名称列表）
+app_list = ["notepad.exe", "calc.exe"]
+# 是否启用日志记录
+enable_logging = true
+[logging]
+level = "INFO"
+prefix = "[OpenAppPlugin]"

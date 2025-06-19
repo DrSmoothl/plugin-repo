@@ -2,5 +2,11 @@
   {
     "id": "MaiM-with-u.example-plugin",
     "repositoryUrl": "https://github.com/MaiM-with-u/MaiBot"
+  },
+  {
+    "id": "biucols.open_appliction_plugin",
+    "repositoryUrl": "https://github.com/biucols/plugin-repo"
   }
 ]
+
+
