@@ -3,9 +3,9 @@
     "id": "A0000Xz.MaiBot-Tarots-Plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "tarots_plugin",
-      "version": "0.9.6",
-      "description": "塔罗牌插件，提供了抽塔罗牌占卜功能，具有模拟人类的调用方式和独特自定义风格的解牌回复。牌面为B站幻星集",
+      "name": "塔罗牌插件",
+      "version": "0.9.7",
+      "description": "提供了抽塔罗牌占卜功能，具有模拟人类的调用方式和独特自定义风格的解牌回复。牌面为B站幻星集",
       "author": {
         "name": "A肆零西烛",
         "url": "https://github.com/A0000Xz"
@@ -300,9 +300,9 @@
     "id": "A0000Xz.MaiBot-Curfew-Plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "curfew_plugin",
-      "version": "0.6.0",
-      "description": "宵禁插件，在机器人是QQ群聊管理员的情况下实现了自动宵禁功能",
+      "name": "宵禁插件",
+      "version": "0.8.0",
+      "description": "在机器人是QQ群聊管理员的情况下实现了自动宵禁功能",
       "author": {
         "name": "A肆零西烛",
         "url": "https://github.com/A0000Xz"
@@ -334,9 +334,9 @@
     "id": "A0000Xz.MaiBot-AntiPoke-Plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "anti_poke_plugin",
-      "version": "0.6.0",
-      "description": "防戳插件，在帮助你的麦麦实现人性化戳一戳互动的同时，避免过多戳一戳捣乱",
+      "name": "防戳插件",
+      "version": "0.9.0",
+      "description": "帮助你的麦麦实现人性化戳一戳互动的同时，避免过多戳一戳捣乱",
       "author": {
         "name": "A肆零西烛",
         "url": "https://github.com/A0000Xz"
