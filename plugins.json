@@ -40,12 +40,20 @@
     "repositoryUrl": "https://github.com/A0000Xz/MaiBot-AntiPoke-Plugin"
   },
   {
+    "id": "tts_voice_plugin",
+    "repositoryUrl": "https://github.com/xuqian13/tts_voice_plugin"
+  },
+  {
     "id": "xuqian13.music_plugin",
     "repositoryUrl": "https://github.com/xuqian13/music_plugin"
   },
   {
     "id": "Schxar.Maibot-Doubao_pic_plugin",
     "repositoryUrl": "https://github.com/schxar/doubao_pic_plugin"
+  },
+  {
+    "id": "schxar.music_plugin",
+    "repositoryUrl": "https://github.com/schxar/music_plugin"
   },
   {
     "id": "ikun11451.bing_daily_image_plugin",
