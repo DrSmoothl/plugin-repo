@@ -46,5 +46,9 @@
   {
     "id": "Schxar.Maibot-Doubao_pic_plugin",
     "repositoryUrl": "https://github.com/schxar/doubao_pic_plugin"
+  },
+  {
+    "id": "ikun11451.bing_daily_image_plugin",
+    "repositoryUrl": "https://github.com/ikun11451/bing_daily_image_plugin"
   }
 ]
