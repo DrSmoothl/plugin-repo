@@ -54,5 +54,9 @@
   {
     "id": "schxar.music_plugin",
     "repositoryUrl": "https://github.com/schxar/music_plugin"
+  },
+  {
+    "id": "ikun-11451.bing_daily_image_plugin",
+    "repositoryUrl": "https://github.com/ikun-11451/bing_daily_image_plugin"
   }
 ]
