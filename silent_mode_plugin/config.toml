@@ -24,6 +24,12 @@ shutup_keywords = ["麦麦闭嘴"]
 # 解除静音关键词列表
 open_mouth_keywords = ["麦麦张嘴"]
 
+# 进入静音关键词
+shutup_keyword = "麦麦闭嘴"
+
+# 解除静音关键词
+open_mouth_keyword = "麦麦张嘴"
+
 # 是否启用解除静音关键词
 enable_open_mouth = true
 

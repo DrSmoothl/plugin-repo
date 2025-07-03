@@ -182,8 +182,8 @@ class ShutupCommand(BaseCommand):
                     elif getattr(message.chat_stream, "at_bot_inevitable_reply", False):
                         should_unmute = True
                     else:
-                        # 检测是否@提及，使用统一工具函数
-                        if _contains_at(message):
+                        # 再次采用更宽松的正则：出现 @麦麦 / @<麦麦:uid> / [CQ:at...]
+                        if re.search(r"@|\[CQ:at,", _get_msg_text(message)):
                             should_unmute = True
 
                 if should_unmute:
@@ -223,7 +223,7 @@ class ShutupCommand(BaseCommand):
                                 setattr(message.chat_stream, attr_name, False)
                             elif isinstance(getattr(message.chat_stream, attr_name), (int, float)):
                                 setattr(message.chat_stream, attr_name, 0)
-                        except Exception:
+                        except:
                             pass
 
                 return None
@@ -434,7 +434,7 @@ class SilentFilterAction(BaseAction):
                                 setattr(chat_stream, attr_name, False)
                             elif isinstance(getattr(chat_stream, attr_name), (int, float)):
                                 setattr(chat_stream, attr_name, 0)
-                        except Exception:
+                        except:
                             pass
             
             # 4. 如果有message_handler属性，替换为空函数
@@ -768,7 +768,7 @@ class SilentModePlugin(BasePlugin):
 
             # 在插件环境里启动后台看护任务
             loop = asyncio.get_event_loop()
-            self._config_watcher_task = loop.create_task(_watch_config())
+            loop.create_task(_watch_config())
         except Exception as e:
             logger.debug(f"[SilentModePlugin] 未启动热更新监视器: {e}")
 
@@ -780,16 +780,6 @@ class SilentModePlugin(BasePlugin):
         if self.get_config("silent.enable_open_mouth", True):
             comps.append((OpenMouthCommand.get_command_info(), OpenMouthCommand))
         return comps
-
-    # -------- 插件卸载钩子，用于清理后台任务 --------
-    async def on_unload(self):  # 插件框架应在卸载前调用
-        task = getattr(self, "_config_watcher_task", None)
-        if task and not task.done():
-            task.cancel()
-            try:
-                await task
-            except Exception:
-                pass
 
 # ======================= 关键词全局集合 =======================
 # 这些集合会在插件初始化时根据配置动态填充，供各组件/补丁统一引用。
