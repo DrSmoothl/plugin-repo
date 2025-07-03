@@ -1,4 +1,4 @@
-# Silent Mode 插件 (silent_mode_plugin)
+# 麦麦闭嘴（静音模式）插件 (silent_mode_plugin)
 
 通过关键字 **麦麦闭嘴** 让 MaiBot 在群聊中进入静音模式，使用 **麦麦张嘴** 解除静音。
 ![image](https://github.com/user-attachments/assets/ca95d421-0013-4f96-a70f-4b9727be410f)
@@ -48,6 +48,10 @@ suppress_memory_logs = true
 list_type = "blacklist"
 list = []
 ```
+
+##免责声明
+
+本插件AI全权开发，本人无知识储备
 
 ## 开源协议 / License
 
