@@ -1,0 +1,58 @@
+# silent_mode_plugin - 配置文件
+# 触发 "麦麦闭嘴" 后让机器人在群聊中安静一段时间，可用 "麦麦张嘴" 解除。
+# 配置版本: 0.3.0
+
+# 插件基本信息
+[plugin]
+
+# 是否启用插件
+enabled = true
+
+# 配置文件版本
+config_version = "0.3.0"
+
+
+# 静音参数配置
+[silent]
+
+# 静音持续时间（秒）
+duration_seconds = 600
+
+# 进入静音关键词列表
+shutup_keywords = ["麦麦闭嘴"]
+
+# 解除静音关键词列表
+open_mouth_keywords = ["麦麦张嘴"]
+
+# 进入静音关键词
+shutup_keyword = "麦麦闭嘴"
+
+# 解除静音关键词
+open_mouth_keyword = "麦麦张嘴"
+
+# 是否启用解除静音关键词
+enable_open_mouth = true
+
+# @机器人时是否忽略静音并解除静音
+at_mention_break = true
+
+# 静音时是否隐藏 memory 日志
+suppress_memory_logs = true
+
+# 是否输出静音剩余时间提醒日志
+show_summary_log = true
+
+# 是否屏蔽后台 chat/normal_chat 消息日志
+suppress_chat_logs = true
+
+
+# 用户控制配置
+[user_control]
+
+# whitelist 或 blacklist
+list_type = "blacklist"
+
+# QQ号列表
+list = []
+
+

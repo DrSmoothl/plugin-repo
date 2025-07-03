@@ -1,0 +1,35 @@
+{
+  "manifest_version": 1,
+  "name": "Silent Mode 插件 (silent_mode_plugin)",
+  "version": "1.0.4",
+  "description": "触发 \"麦麦闭嘴\" 后让机器人在群聊中安静一段时间，可用 \"麦麦张嘴\" 解除。",
+  "author": {
+    "name": "MaiBot 用户",
+    "url": ""
+  },
+  "license": "MIT",
+  "host_application": {
+    "min_version": "0.8.0"
+  },
+  "keywords": ["silent", "mute", "群聊"],
+  "categories": ["Management"],
+  "plugin_info": {
+    "components": [
+      {
+        "type": "command",
+        "name": "shutup",
+        "description": "触发静音"
+      },
+      {
+        "type": "command",
+        "name": "open_mouth",
+        "description": "解除静音"
+      },
+      {
+        "type": "action",
+        "name": "silent_filter",
+        "description": "静音期间阻止回复"
+      }
+    ]
+  }
+} 
