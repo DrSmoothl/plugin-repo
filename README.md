@@ -37,7 +37,7 @@
 ```toml
 [plugin]
 enabled = true              # 是否启用插件
-config_version = "1.0.2"
+config_version = "1.0.4"
 
 [silent]
 duration_seconds   = 600     # 静音时长（秒）
@@ -46,6 +46,8 @@ open_mouth_keywords = ["麦麦张嘴"]
 enable_open_mouth  = true    # 是否启用解除关键词
 at_mention_break   = true    # @机器人时是否打断静音
 suppress_memory_logs = true  # 静音时隐藏 memory 日志
+show_summary_log   = true    # 是否输出静音剩余时间提醒日志
+suppress_chat_logs = true    # 静音时是否屏蔽后台 chat/normal_chat 消息日志
 
 [user_control]
 list_type = "blacklist"     # "whitelist" / "blacklist"
