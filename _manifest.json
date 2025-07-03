@@ -1,19 +1,23 @@
 {
   "manifest_version": 1,
-  "name": "麦麦闭嘴",
-  "version": "1.0.2",
+  "name": "麦麦闭嘴（Silent Mode）",
+  "version": "1.0.4",
   "description": "触发 \"麦麦闭嘴\" 后让机器人在群聊中安静一段时间，可用 \"麦麦张嘴\" 解除。",
   "author": {
     "name": "风花叶",
     "url": "https://github.com/khiqwq"
   },
   "license": "AGPL-v3.0",
+  "homepage_url": "https://github.com/khiqwq/silent_mode_plugin",
+  "repository_url": "https://github.com/khiqwq/silent_mode_plugin",
   "host_application": {
     "min_version": "0.8.0",
     "max_version": "0.8.0"
   },
-  "keywords": ["silent", "mute", "群聊"],
-  "categories": ["Management"],
+  "keywords": ["silent", "mute", "shutup", "maibot", "群聊"],
+  "categories": ["Moderation", "Management"],
+  "default_locale": "zh-CN",
+  "config_file_name": "config.toml",
   "plugin_info": {
     "components": [
       {
