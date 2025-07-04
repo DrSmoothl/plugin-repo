@@ -1,7 +1,7 @@
 {
   "manifest_version": 1,
   "name": "麦麦闭嘴（Silent Mode）",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "触发 \"麦麦闭嘴\" 后让机器人在群聊中安静一段时间，可用 \"麦麦张嘴\" 解除。",
   "author": {
     "name": "风花叶",
