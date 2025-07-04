@@ -1,6 +1,6 @@
 # silent_mode_plugin - 配置文件
 # 触发 "麦麦闭嘴" 后让机器人在群聊中安静一段时间，可用 "麦麦张嘴" 解除。
-# 配置版本: 1.0.4
+# 配置版本: 1.0.5
 
 # 插件基本信息
 [plugin]
@@ -9,7 +9,7 @@
 enabled = true
 
 # 配置文件版本
-config_version = "1.0.4"
+config_version = "1.0.5"
 
 
 # 静音参数配置

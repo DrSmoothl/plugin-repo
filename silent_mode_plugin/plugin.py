@@ -18,6 +18,7 @@ from src.plugin_system import (
 )
 from src.common.logger import get_logger
 from src.chat.normal_chat.normal_chat import NormalChat  # 新增导入
+from src.config.config import global_config  # 引入机器人自身信息
 
 logger = get_logger("silent_mode_plugin")
 
@@ -182,8 +183,8 @@ class ShutupCommand(BaseCommand):
                     elif getattr(message.chat_stream, "at_bot_inevitable_reply", False):
                         should_unmute = True
                     else:
-                        # 再次采用更宽松的正则：出现 @麦麦 / @<麦麦:uid> / [CQ:at...]
-                        if re.search(r"@|\[CQ:at,", _get_msg_text(message)):
+                        # 如果文本中出现显式提及机器人 (@机器人/CQ:at 指向机器人)，则解除静音
+                        if _contains_at(message):
                             should_unmute = True
 
                 if should_unmute:
@@ -829,11 +830,48 @@ def is_open_mouth_keyword(text_or_msg) -> bool:
     return _strip_mentions(text) in OPEN_MOUTH_KEYWORDS
 
 def _contains_at(text_or_msg) -> bool:
+    """判断文本/消息中是否显式提及了 **机器人本身**。
+
+    仅在满足以下任意一种情况时返回 True：
+        1) CQ 码形式   : [CQ:at,qq={bot_qq}]
+        2) Mirai 形式  : @<任意昵称:{bot_qq}>
+        3) 纯文本形式  : @机器人昵称 或 @机器人别名
+    其中机器人信息取自全局配置 global_config.bot。
+    """
+
     text = text_or_msg if isinstance(text_or_msg, str) else _get_msg_text(text_or_msg)
     if not text:
         return False
-    # 仅匹配显式 @ 提及：
-    # 1. CQ码: [CQ:at,qq=xxxxx]
-    # 2. Mirai/小栗子: @<昵称:QQ>
-    explicit_at_pattern = r"\[CQ:at,[^\]]+\]|@<[^>]+?:\d+>"
-    return bool(re.search(explicit_at_pattern, text))
+
+    # ---- 基础信息 ----
+    try:
+        bot_qq: str = str(global_config.bot.qq_account).strip()
+    except Exception:
+        bot_qq = ""
+
+    bot_names: list[str] = []
+    try:
+        if global_config.bot.nickname:
+            bot_names.append(str(global_config.bot.nickname).strip())
+        if global_config.bot.alias_names:
+            bot_names.extend([str(n).strip() for n in global_config.bot.alias_names])
+    except Exception:
+        pass
+
+    # ---- 模式 1. CQ 码 ----
+    if bot_qq and re.search(rf"\[CQ:at,qq={re.escape(bot_qq)}\]", text):
+        return True
+
+    # ---- 模式 2. Mirai/小栗子格式 ----
+    if bot_qq and re.search(rf"@<[^>]*?:{re.escape(bot_qq)}>", text):
+        return True
+
+    # ---- 模式 3. 纯文本 @昵称/别名 ----
+    for name in bot_names:
+        if not name:
+            continue
+        # 支持 @昵称、@ 昵称（带空格）等形式
+        if re.search(rf"@\s*{re.escape(name)}", text):
+            return True
+
+    return False
