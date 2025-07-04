@@ -37,7 +37,7 @@
 ```toml
 [plugin]
 enabled = true              # 是否启用插件
-config_version = "1.0.4"
+config_version = "1.0.5"
 
 [silent]
 duration_seconds   = 600     # 静音时长（秒）
