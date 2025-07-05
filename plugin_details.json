@@ -774,8 +774,8 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Custom_pic 自定义提示词生图插件",
-      "version": "1.0.0",
-      "description": "我的第一个MaiCore插件,基于豆包生图插件，根据 0.8.0 api 文档修改，进行更改新增，支持魔搭api、火山api、chatany api，包含新增自定义正面提示词、负面提示词，可以调用 lora 模型调整画风生图。",
+      "version": "1.0.1",
+      "description": "一个基于魔搭 api 的生图插件，根据 0.8.0 api 文档修改，魔搭平台是一个公益网址，可以免费调用各种 lora 画图模型。\n插件支持其他 api 格式，支持魔搭api、火山api、chatany api 。可自定义正面提示词、负面提示词，可以调用 lora 模型调整画风生图，需要有一定 AI 绘图基础，适合喜欢折腾的人。",
       "author": {
         "name": "1021143806",
         "url": "https://github.com/1021143806/custom_pic_plugin"
@@ -817,7 +817,7 @@
         ],
         "features": [
           "自定义画风",
-          "高自由度模型",
+          "高自由���模型",
           "api自选",
           "需要一定ai绘图能力"
         ]
