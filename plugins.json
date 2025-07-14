@@ -90,5 +90,9 @@
   {
     "id": "SkillfulPainter.repeat_plugin",
     "repositoryUrl": "https://github.com/SkillfulPainter/repeat_plugin"
+  },
+  {
+    "id": "poke_plugin",
+    "repositoryUrl": "https://github.com/Neorestim/poke_plugin"
   }
 ]
