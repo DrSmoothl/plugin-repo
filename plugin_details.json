@@ -36,7 +36,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "塔罗牌插件",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "description": "提供了抽塔罗牌占卜功能，具有模拟人类的调用方式和独特自定义风格的解牌回复。牌面为B站幻星集",
       "author": {
         "name": "A肆零西烛",
@@ -44,8 +44,8 @@
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.1",
-        "max_version": "0.8.1"
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
       },
       "keywords": [
         "tarot",
@@ -333,7 +333,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "宵禁插件",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "description": "在机器人是QQ群聊管理员的情况下实现了自动宵禁功能",
       "author": {
         "name": "A肆零西烛",
@@ -341,8 +341,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
       },
       "keywords": [
         "mute",
@@ -367,7 +367,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "防戳插件",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "description": "帮助你的麦麦实现人性化戳一戳互动的同时，避免过多戳一戳捣乱",
       "author": {
         "name": "A肆零西烛",
@@ -375,8 +375,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.2"
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
       },
       "keywords": [
         "poke",
@@ -719,7 +719,7 @@
       "license": "MIT",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "max_version": "0.9.0"
       },
       "homepage_url": "https://github.com/XXXxx7258/url_summary_plugin",
       "repository_url": "https://github.com/XXXxx7258/url_summary_plugin",
@@ -865,7 +865,7 @@
       "description": "提供怪物猎人集会码的登记、查询和删除功能，支持多群组隔离管理",
       "author": {
         "name": "倒过来的蛋糕蛋糕",
-        "url": "https://space.bilibili.com/85109738"
+        "url": "https://github.com/dkdcakedangao"
       },
       "license": "GPL-v3.0-or-later",
       "keywords": [
@@ -879,6 +879,7 @@
         "游戏",
         "实用工具"
       ],
+      "repository_url": "https://github.com/dkdcakedangao/MaiBot-MHWJH-Plugin",
       "default_locale": "zh-CN",
       "locales_path": "_locales",
       "host_application": {
@@ -902,8 +903,8 @@
     "id": "internetsb.Maizone",
     "manifest": {
       "manifest_version": 1,
-      "name": "Maizone",
-      "version": "0.4.0",
+      "name": "Maizone（麦麦空间）",
+      "version": "1.0.0",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -951,12 +952,46 @@
     }
   },
   {
+    "id": "liuchunyu44.acpoke_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "acpoke_plugin",
+      "display_name": "戳一戳插件",
+      "version": "0.3.3",
+      "description": "一个主动发起“戳一戳”的 MaiMai 插件",
+      "author": {
+        "name": "何夕",
+        "email": "lcy1416603026@gmail.com",
+        "link": "https://github.com/liuchunyu44/acpoke_plugin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.8.0",
+        "max_version": "0.8.10"
+      },
+      "entry": "plugin.py",
+      "keywords": [
+        "poke",
+        "maimai",
+        "插件",
+        "自动戳人"
+      ],
+      "categories": [
+        "Fun",
+        "Interaction",
+        "Automation"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
     "id": "SkillfulPainter.repeat_plugin",
     "manifest": {
       "manifest_version": 1,
       "name": "麦麦复读插件（在内置reply插件基础上更改）",
       "version": "1.0.0",
-      "description": "在内置的reply插件中新增了判断是否有重复消息、是否参与复读的方法。覆盖前请先备份！！",
+      "description": "在内置的reply插件中新增了判断是否参与复读的方法。使用前请一定要阅读本插件仓库内的readme.md，覆盖前请先备份！！",
       "author": {
         "name": "Original by MaiBot团队，modified by 火火火木",
         "url": "https://github.com/SkillfulPainter"
@@ -999,10 +1034,30 @@
           {
             "type": "action",
             "name": "emoji",
-            "description": "发送表情包辅助表达情绪"
+            "description": "发送表情包辅助表达���绪"
           }
         ]
       }
+    }
+  },
+  {
+    "id": "foxcyber907.balance_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "balance_plugin",
+      "version": "1.0.0",
+      "description": "硅基流动余额",
+      "author": {
+        "name": "雅诺狐",
+        "url": "https://github.com/foxcyber907/maim_balance_plugin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.8.0",
+        "max_version": "0.8.10"
+      },
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
     }
   }
 ]
