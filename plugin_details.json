@@ -367,7 +367,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "防戳插件",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "description": "帮助你的麦麦实现人性化戳一戳互动的同时，避免过多戳一戳捣乱",
       "author": {
         "name": "A肆零西烛",
