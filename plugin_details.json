@@ -108,8 +108,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
       },
       "homepage_url": "https://github.com/schxar/doubao_search_plugin",
       "repository_url": "https://github.com/schxar/doubao_search_plugin",
@@ -440,42 +440,36 @@
     "id": "xuqian13.music_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "网易云点歌插件",
-      "version": "0.1.0",
-      "description": "基于网易云音乐API的智能点歌插件，支持音乐搜索和点歌功能",
+      "name": "网易云音乐点歌插件",
+      "version": "1.0.0",
+      "description": "基于网易云音乐API的智能点歌插件，支持音乐搜索和点歌功能。",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
-      "license": "AGPL-3.0",
+      "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
       },
-      "homepage_url": "https://github.com/xuqian13",
-      "repository_url": "https://github.com/xuqian13/music_plugin",
       "keywords": [
-        "听歌",
+        "音乐",
         "点歌",
+        "网易云",
         "music",
-        "song"
+        "song",
+        "播放",
+        "搜索",
+        "娱乐"
       ],
       "categories": [
-        "music"
+        "Entertainment",
+        "Music",
+        "Utility"
       ],
+      "repository_url": "https://github.com/xuqian13/music_plugin",
       "default_locale": "zh-CN",
-      "locales_path": "_locales",
-      "plugin_info": {
-        "is_built_in": false,
-        "plugin_type": "general",
-        "components": [
-          {
-            "type": "action",
-            "name": "music_plugin",
-            "description": "基于网易云音乐API的智能点歌插件，支持音乐搜索和点歌功能。"
-          }
-        ]
-      }
+      "locales_path": "_locales"
     }
   },
   {
