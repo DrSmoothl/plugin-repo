@@ -898,7 +898,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -906,8 +906,8 @@
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.1"
+        "min_version": "0.9.1",
+        "max_version": "0.9.1"
       },
       "homepage_url": "https://github.com/internetsb/Maizone",
       "repository_url": "https://github.com/internetsb/Maizone",
@@ -949,26 +949,27 @@
     "id": "liuchunyu44.acpoke_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "acpoke_plugin",
+      "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.3.3",
-      "description": "一个主动发起“戳一戳”的 MaiMai 插件",
+      "version": "0.3.4",
+      "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
-        "email": "lcy1416603026@gmail.com",
-        "link": "https://github.com/liuchunyu44/acpoke_plugin"
+        "url": "https://github.com/liuchunyu44/acpoke_plugin",
+        "email": "lcy1416603026@gmail.com"
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.10"
+        "min_version": "0.9.0",
+        "max_version": "0.9.1"
       },
       "entry": "plugin.py",
       "keywords": [
         "poke",
         "maimai",
-        "插件",
-        "自动戳人"
+        "互动",
+        "自动戳人",
+        "插件"
       ],
       "categories": [
         "Fun",
