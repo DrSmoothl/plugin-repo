@@ -396,44 +396,36 @@
     "id": "tts_voice_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "GPT-SoVITS 语音合成插件（多风格版）",
-      "version": "1.0.0",
-      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多风格、多语言，适用于语音回复与朗读。",
+      "name": "GPT-SoVITS 语音合成插件",
+      "version": "2.0.0",
+      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多种语言和多风格语音合成。",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
-      "license": "AGPL-3.0",
+      "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.9.0",
+        "max_version": "0.9.9"
       },
-      "homepage_url": "https://github.com/xuqian13",
-      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "keywords": [
-        "TTS",
+        "tts",
         "语音合成",
-        "GPT-SoVITS",
+        "文本转语音",
+        "gpt-sovits",
+        "语音",
+        "朗读",
         "多风格",
-        "多语言"
+        "语音播报"
       ],
       "categories": [
-        "语音",
-        "聊天增强"
+        "Utility",
+        "Communication",
+        "Accessibility"
       ],
+      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "default_locale": "zh-CN",
-      "locales_path": "_locales",
-      "plugin_info": {
-        "is_built_in": false,
-        "plugin_type": "general",
-        "components": [
-          {
-            "type": "action",
-            "name": "tts_voice_action",
-            "description": "将文本内容转换为语音并发送，支持多风格多语言"
-          }
-        ]
-      }
+      "locales_path": "_locales"
     }
   },
   {
