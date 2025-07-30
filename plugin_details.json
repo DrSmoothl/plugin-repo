@@ -943,7 +943,7 @@
       "manifest_version": 1,
       "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.3.4",
+      "version": "0.4.0",
       "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
