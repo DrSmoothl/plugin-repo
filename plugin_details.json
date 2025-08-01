@@ -792,7 +792,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "custom_pic_plugin",
-      "version": "1.2.1",
+      "version": "2.0.2",
       "description": "一个基于魔搭api 的生图插件，根据 0.8.0 api 文档修改，魔搭平台是一个公益网址，可以免费调用各种 lora 画图模型。插件支持其他 api 格式，支持魔搭api、火山api、chatany api 。可自定义正面提示词、负面提示词，可指定图片大小或让麦麦自己决定，可以调用 lora 模型调整画风生图，需要有一定 AI 绘图基础，适合喜欢折腾的人。",
       "author": {
         "name": "Ptrel",
@@ -801,7 +801,7 @@
       "license": "GPL-v3.0-or-later",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "max_version": "0.9.1"
       },
       "homepage_url": "https://github.com/MaiM-with-u/maibot",
       "repository_url": "https://github.com/MaiM-with-u/maibot",
