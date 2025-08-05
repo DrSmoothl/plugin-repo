@@ -1327,5 +1327,32 @@
         "min_version": "0.8.0"
       }
     }
+  },
+  {
+    "id": "A0000Xz.MaiBot-Silence-Plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "沉默插件",
+      "version": "0.9.6",
+      "description": "使麦麦更人性化地保持沉默",
+      "author": {
+        "name": "A肆零西烛",
+        "url": "https://github.com/A0000Xz"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.9.1",
+        "max_version": "0.9.1"
+      },
+      "keywords": [
+        "silence"
+      ],
+      "categories": [
+        "Moderation"
+      ],
+      "repository_url": "https://github.com/A0000Xz/MaiBot-Silence-Plugin",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
   }
 ]
