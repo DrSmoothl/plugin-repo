@@ -109,7 +109,7 @@
       "license": "GPL-v3.0-or-later",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "0.9.0"
+        "max_version": "0.9.1"
       },
       "homepage_url": "https://github.com/schxar/doubao_search_plugin",
       "repository_url": "https://github.com/schxar/doubao_search_plugin",
@@ -396,44 +396,36 @@
     "id": "tts_voice_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "GPT-SoVITS 语音合成插件（多风格版）",
-      "version": "1.0.0",
-      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多风格、多语言，适用于语音回复与朗读。",
+      "name": "GPT-SoVITS 语音合成插件",
+      "version": "2.0.0",
+      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多种语言和多风格语音合成。",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
-      "license": "AGPL-3.0",
+      "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.9.0",
+        "max_version": "0.9.9"
       },
-      "homepage_url": "https://github.com/xuqian13",
-      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "keywords": [
-        "TTS",
+        "tts",
         "语音合成",
-        "GPT-SoVITS",
+        "文本转语音",
+        "gpt-sovits",
+        "语音",
+        "朗读",
         "多风格",
-        "多语言"
+        "语音播报"
       ],
       "categories": [
-        "语音",
-        "聊天增强"
+        "Utility",
+        "Communication",
+        "Accessibility"
       ],
+      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "default_locale": "zh-CN",
-      "locales_path": "_locales",
-      "plugin_info": {
-        "is_built_in": false,
-        "plugin_type": "general",
-        "components": [
-          {
-            "type": "action",
-            "name": "tts_voice_action",
-            "description": "将文本内容转换为语音并发送，支持多风格多语言"
-          }
-        ]
-      }
+      "locales_path": "_locales"
     }
   },
   {
@@ -800,7 +792,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "custom_pic_plugin",
-      "version": "1.2.1",
+      "version": "2.0.2",
       "description": "一个基于魔搭api 的生图插件，根据 0.8.0 api 文档修改，魔搭平台是一个公益网址，可以免费调用各种 lora 画图模型。插件支持其他 api 格式，支持魔搭api、火山api、chatany api 。可自定义正面提示词、负面提示词，可指定图片大小或让麦麦自己决定，可以调用 lora 模型调整画风生图，需要有一定 AI 绘图基础，适合喜欢折腾的人。",
       "author": {
         "name": "Ptrel",
@@ -809,7 +801,7 @@
       "license": "GPL-v3.0-or-later",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "max_version": "0.9.1"
       },
       "homepage_url": "https://github.com/MaiM-with-u/maibot",
       "repository_url": "https://github.com/MaiM-with-u/maibot",
@@ -898,7 +890,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -906,8 +898,8 @@
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.1"
+        "min_version": "0.9.1",
+        "max_version": "0.9.1"
       },
       "homepage_url": "https://github.com/internetsb/Maizone",
       "repository_url": "https://github.com/internetsb/Maizone",
@@ -949,26 +941,27 @@
     "id": "liuchunyu44.acpoke_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "acpoke_plugin",
+      "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.3.3",
-      "description": "一个主动发起“戳一戳”的 MaiMai 插件",
+      "version": "0.4.0",
+      "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
-        "email": "lcy1416603026@gmail.com",
-        "link": "https://github.com/liuchunyu44/acpoke_plugin"
+        "url": "https://github.com/liuchunyu44/acpoke_plugin",
+        "email": "lcy1416603026@gmail.com"
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.10"
+        "min_version": "0.9.0",
+        "max_version": "0.9.1"
       },
       "entry": "plugin.py",
       "keywords": [
         "poke",
         "maimai",
-        "插件",
-        "自动戳人"
+        "互动",
+        "自动戳人",
+        "插件"
       ],
       "categories": [
         "Fun",
@@ -1092,6 +1085,246 @@
         "features": [
           "戳一戳"
         ]
+      }
+    }
+  },
+  {
+    "id": "xuqian13.ai_voice_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "AI语音插件",
+      "version": "1.0.0",
+      "description": "基于 MaiCore 的 AI 语音合成插件，支持多种音色、自动播报与命令触发，提供高质量的文本转语音功能。",
+      "author": {
+        "name": "靓仔",
+        "url": ""
+      },
+      "license": "AGPL-3.0",
+      "homepage_url": "",
+      "repository_url": "",
+      "keywords": [
+        "TTS",
+        "语音合成",
+        "AI语音",
+        "多音色",
+        "语音",
+        "AI",
+        "文本转语音",
+        "MaiCore"
+      ],
+      "categories": [
+        "语音",
+        "AI",
+        "聊天增强",
+        "娱乐"
+      ],
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
+      },
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "action",
+            "name": "ai_voice_action",
+            "description": "智能语音合成Action，支持关键词自动触发，将文本转换为AI语音并发送"
+          },
+          {
+            "type": "command",
+            "name": "ai_voice_command",
+            "description": "手动语音合成Command，通过/voice命令触发，支持指定音色参数"
+          }
+        ],
+        "features": [
+          "多种音色支持（小新、妲己、酥心御姐等）",
+          "双模式触发（智能触发和手动触发）",
+          "音色别名映射，方便用户使用",
+          "仅群聊可用，确保使用场景合适",
+          "完善的错误处理和日志记录",
+          "配置灵活，支持自定义默认音色"
+        ],
+        "dependencies": {
+          "python": [],
+          "system": [],
+          "plugins": []
+        },
+        "api_info": {
+          "provider": "MaiCore内置",
+          "endpoint": "AI_VOICE_SEND命令",
+          "authentication": "无需认证",
+          "rate_limit": "根据系统限制"
+        }
+      },
+      "voice_characters": {
+        "小新": "lucy-voice-laibixiaoxin",
+        "猴哥": "lucy-voice-houge",
+        "四郎": "lucy-voice-silang",
+        "东北老妹儿": "lucy-voice-guangdong-f1",
+        "广西大表哥": "lucy-voice-guangxi-m1",
+        "妲己": "lucy-voice-daji",
+        "霸道总裁": "lucy-voice-lizeyan",
+        "酥心御姐": "lucy-voice-suxinjiejie",
+        "说书先生": "lucy-voice-m8",
+        "憨憨小弟": "lucy-voice-male1",
+        "憨厚老哥": "lucy-voice-male3",
+        "吕布": "lucy-voice-lvbu",
+        "元气少女": "lucy-voice-xueling",
+        "文艺少女": "lucy-voice-f37",
+        "磁性大叔": "lucy-voice-male2",
+        "邻家小妹": "lucy-voice-female1",
+        "低沉男声": "lucy-voice-m14",
+        "傲娇少女": "lucy-voice-f38",
+        "爹系男友": "lucy-voice-m101",
+        "暖心姐姐": "lucy-voice-female2",
+        "温柔妹妹": "lucy-voice-f36",
+        "书香少女": "lucy-voice-f34"
+      },
+      "configuration": {
+        "config_file": "config.toml",
+        "auto_generate": true,
+        "sections": [
+          {
+            "name": "plugin",
+            "description": "插件基本配置"
+          },
+          {
+            "name": "voice",
+            "description": "AI语音功能配置"
+          },
+          {
+            "name": "components",
+            "description": "组件启用控制"
+          }
+        ]
+      },
+      "usage_examples": [
+        {
+          "type": "action",
+          "description": "关键词自动触发",
+          "example": "用户：请用语音说\"你好世界\"\n机器人：[自动生成语音文件并发送]"
+        },
+        {
+          "type": "command",
+          "description": "手动命令触发",
+          "example": "/voice 你好世界 小新"
+        },
+        {
+          "type": "command",
+          "description": "使用默认音色",
+          "example": "/voice 今天天气不错"
+        }
+      ]
+    }
+  },
+  {
+    "id": "xuqian13.gsv2p_tts_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "GSV2P TTS 插件",
+      "version": "1.0.0",
+      "description": "基于 GSV2P API 的文本转语音插件，支持多种语言和高级语音合成参数。",
+      "author": {
+        "name": "靓仔",
+        "url": "https://github.com/xuqian13"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
+      },
+      "keywords": [
+        "tts",
+        "语音合成",
+        "文本转语音",
+        "gsv2p",
+        "语音",
+        "朗读",
+        "音色",
+        "语音播报"
+      ],
+      "categories": [
+        "Utility",
+        "Communication",
+        "Accessibility"
+      ],
+      "repository_url": "https://github.com/xuqian13/gsv2p_tts_plugin",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "XinxInxiN0.search_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "search_plugin",
+      "version": "1.0.0",
+      "description": "使用Brave Search API进行搜索并使用硅基流动API总结结果的插件",
+      "author": {
+        "name": "U+4E50",
+        "url": "https://github.com/XinxInxiN0"
+      },
+      "keywords": [
+        "搜索"
+      ],
+      "license": "GPLv3",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.9.0"
+      }
+    }
+  },
+  {
+    "id": "Mettafy.timed_greeting_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "定时问候插件",
+      "version": "0.2.0",
+      "description": "在指定时间段内，根据关键词向指定用户或群组发送由LLM生成的语句。",
+      "author": {
+        "name": "Mettafy",
+        "url": "https://github.com/Mettafy"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.9.1",
+        "max_version": "0.9.1"
+      },
+      "keywords": [
+        "定时",
+        "问候",
+        "早安晚安",
+        "提醒",
+        "scheduled",
+        "greeting"
+      ],
+      "categories": [
+        "工具",
+        "提醒",
+        "Tools",
+        "Reminder"
+      ],
+      "repository_url": "https://github.com/Mettafy/timed_greeting_plugin",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "SteamedbunsMC.SomeUtils",
+    "manifest": {
+      "manifest_version": 0.1,
+      "name": "QQ_Bot_Some_Utils",
+      "version": "0.1.0",
+      "description": "A simple qq group MaiMBot utils plugin.A piece of mess.",
+      "author": {
+        "name": "RandomDeveloper",
+        "url": "rand0mk4cas@outlook.com"
+      },
+      "license": "MIT License",
+      "host_application": {
+        "min_version": "0.8.0"
       }
     }
   }
