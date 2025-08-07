@@ -1333,7 +1333,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "沉默插件",
-      "version": "0.9.6",
+      "version": "0.9.8",
       "description": "使麦麦更人性化地保持沉默",
       "author": {
         "name": "A肆零西烛",
