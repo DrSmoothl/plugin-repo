@@ -4,7 +4,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "群聊禁言管理插件 (Mute Plugin)",
-      "version": "3.1.0",
+      "version": "4.0.0",
       "description": "群聊禁言管理插件，提供智能禁言功能",
       "author": {
         "name": "SengokuCola",
@@ -12,7 +12,7 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.9.0"
+        "min_version": "0.10.0"
       },
       "keywords": [
         "mute",
@@ -29,6 +29,156 @@
       ],
       "default_locale": "zh-CN",
       "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "SengokuCola.BetterExpressionPlugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "表达方式管理插件 (Expression Manager Plugin)",
+      "version": "1.0.0",
+      "description": "管理麦麦的表达方式，支持添加、删除、修改和查看表达方式",
+      "author": {
+        "name": "SengokuCola",
+        "url": "https://github.com/MaiM-with-u"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/MaiM-with-u/maibot",
+      "repository_url": "https://github.com/MaiM-with-u/maibot",
+      "keywords": [
+        "expression",
+        "management",
+        "admin",
+        "style",
+        "grammar"
+      ],
+      "categories": [
+        "Management",
+        "Admin"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "management",
+        "components": [
+          {
+            "type": "command",
+            "name": "add_expression",
+            "description": "添加新的表达方式"
+          },
+          {
+            "type": "command",
+            "name": "list_expressions",
+            "description": "列举表达方式（支持翻页）"
+          },
+          {
+            "type": "command",
+            "name": "delete_expression",
+            "description": "删除指定的表达方式"
+          },
+          {
+            "type": "command",
+            "name": "modify_expression_weight",
+            "description": "修改表达方式的权重"
+          },
+          {
+            "type": "command",
+            "name": "review_expressions",
+            "description": "查看表达方式使用记录"
+          },
+          {
+            "type": "command",
+            "name": "learn_expression",
+            "description": "学习表达方式"
+          },
+          {
+            "type": "command",
+            "name": "analyze_message_expression",
+            "description": "分析消息表达方式"
+          }
+        ],
+        "features": [
+          "添加表达方式（语言风格和句法特点）",
+          "分页列举表达方式",
+          "删除表达方式",
+          "修改表达方式权重",
+          "支持按群组管理",
+          "查看表达方式使用记录",
+          "学习表达方式",
+          "分析消息表达方式"
+        ]
+      }
+    }
+  },
+  {
+    "id": "SengokuCola.BetterFrequency",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "BetterFrequency 频率控制插件 (BetterFrequency Plugin)",
+      "version": "1.0.0",
+      "description": "控制聊天频率，支持设置focus_value和talk_frequency调整值，提供完整命令和简化命令",
+      "author": {
+        "name": "MaiCore开发团队",
+        "url": "https://github.com/MaiM-with-u"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/MaiCore-with-u/maibot",
+      "repository_url": "https://github.com/MaiCore-with-u/maibot",
+      "keywords": [
+        "frequency",
+        "control",
+        "focus_value",
+        "talk_frequency",
+        "plugin",
+        "shortcut"
+      ],
+      "categories": [
+        "Chat",
+        "Frequency",
+        "Control"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "frequency",
+        "components": [
+          {
+            "type": "command",
+            "name": "set_focus_value",
+            "description": "设置当前聊天的focus_value调整值",
+            "pattern": "/chat focus_value <数字> 或 /chat f <数字>"
+          },
+          {
+            "type": "command",
+            "name": "set_talk_frequency",
+            "description": "设置当前聊天的talk_frequency调整值",
+            "pattern": "/chat talk_frequency <数字> 或 /chat t <数字>"
+          },
+          {
+            "type": "command",
+            "name": "show_frequency",
+            "description": "显示当前聊天的频率控制状态",
+            "pattern": "/chat show 或 /chat s"
+          }
+        ],
+        "features": [
+          "设置focus_value调整值",
+          "设置talk_frequency调整值",
+          "显示当前频率控制状态",
+          "实时频率控制调整",
+          "命令执行反馈（不保存消息）",
+          "支持完整命令和简化命令",
+          "快速操作支持"
+        ]
+      }
     }
   },
   {
@@ -406,7 +556,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "0.9.9"
+        "max_version": "1.0.0"
       },
       "keywords": [
         "tts",
@@ -442,7 +592,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "0.9.0"
+        "max_version": "1.0.0"
       },
       "keywords": [
         "音乐",
@@ -801,7 +951,7 @@
       "license": "GPL-v3.0-or-later",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.9.1"
+        "max_version": "0.10.1"
       },
       "homepage_url": "https://github.com/MaiM-with-u/maibot",
       "repository_url": "https://github.com/MaiM-with-u/maibot",
@@ -890,7 +1040,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "1.3.2",
+      "version": "2.0.0",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -898,8 +1048,8 @@
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.9.1",
-        "max_version": "0.9.1"
+        "min_version": "0.8.0",
+        "max_version": "0.10.0"
       },
       "homepage_url": "https://github.com/internetsb/Maizone",
       "repository_url": "https://github.com/internetsb/Maizone",
@@ -1120,7 +1270,7 @@
       ],
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "0.9.0"
+        "max_version": "1.0.0"
       },
       "default_locale": "zh-CN",
       "plugin_info": {
@@ -1233,7 +1383,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "0.9.0"
+        "max_version": "1.0.0"
       },
       "keywords": [
         "tts",
@@ -1333,7 +1483,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "麦麦联网搜索插件",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "提供联网搜索工具，使麦麦可以根据需要上网搜索信息",
       "author": {
         "name": "Windpicker_owo",
@@ -1341,7 +1491,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.10.0"
+        "min_version": "0.10.0",
+        "max_version": "0.10.0"
       },
       "homepage_url": "https://github.com/Windpicker-owo/InternetSearchPlugin",
       "repository_url": "https://github.com/Windpicker-owo/InternetSearchPlugin",
@@ -1349,6 +1500,10 @@
         "tool",
         "search",
         "online"
+      ],
+      "categories": [
+        "Internet",
+        "Search"
       ],
       "default_locale": "zh-CN",
       "locales_path": "_locales",
@@ -1395,6 +1550,231 @@
       "repository_url": "https://github.com/A0000Xz/MaiBot-Silence-Plugin",
       "default_locale": "zh-CN",
       "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "XinxInxiN0.bilibili_video_sender_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "B站视频直链发送插件 (Bilibili Video Sender)",
+      "version": "1.0.0",
+      "description": "当收到包含哔哩哔哩视频链接的消息时，自动解析并发送可直连的播放地址与视频文件",
+      "author": {
+        "name": "U+4E50",
+        "url": "https://github.com/XinxInxiN0"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.9.0"
+      },
+      "homepage_url": "https://github.com/XinxInxiN0",
+      "repository_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
+      "config_file_name": "config.toml",
+      "keywords": [
+        "bilibili",
+        "video",
+        "sender",
+        "auto"
+      ],
+      "categories": [
+        "Utilities",
+        "Video"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [],
+        "features": [
+          "自动识别B站链接",
+          "解析直链并发送",
+          "同时尝试发送视频文件",
+          "支持b23.tv短链"
+        ]
+      }
+    }
+  },
+  {
+    "id": "XXXxx7258.google_search_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "Google 搜索插件 (Google Search Plugin)",
+      "version": "1.0.0",
+      "description": "在 Google 上进行网络搜索，返回网页结果与摘要。",
+      "author": {
+        "name": "晴空",
+        "url": "https://github.com/XXXxx7258"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/XXXxx7258/google_search_plugin",
+      "repository_url": "https://github.com/XXXxx7258/google_search_plugin",
+      "keywords": [
+        "google",
+        "search",
+        "web",
+        "internet",
+        "查询",
+        "搜索"
+      ],
+      "categories": [
+        "Search",
+        "免费"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "search",
+        "components": [
+          {
+            "type": "action",
+            "name": "search_google",
+            "description": "在 Google 上搜索信息",
+            "activation_modes": [
+              "keyword"
+            ],
+            "keywords": [
+              "搜索",
+              "谷歌",
+              "Google",
+              "搜一下",
+              "找一下"
+            ]
+          },
+          {
+            "type": "command",
+            "name": "google",
+            "description": "使用命令触发 Google 搜索（/google 关键词）",
+            "pattern": "/google"
+          }
+        ],
+        "features": [
+          "Google 关键词搜索",
+          "命令触发与关键词触发",
+          "可配置代理与语言/地区（在插件配置中设置）"
+        ]
+      }
+    }
+  },
+  {
+    "id": "yhny1001.proactive_talk_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "主动发言插件",
+      "plugin_name": "proactive_talk",
+      "author": {
+        "name": "yhny1001",
+        "url": "https://github.com/yhny1001"
+      },
+      "description": "智能主动发言系统 - 低频率高质量的机器人主动互动",
+      "version": "2.0.0",
+      "homepage_url": "https://github.com/yhny1001/proactive_talk_plugin",
+      "repository_url": "https://github.com/yhny1001/proactive_talk_plugin",
+      "license": "GPL-3.0-or-later",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.9.1"
+      },
+      "is_built_in": false,
+      "plugin_type": "interactive",
+      "entry": "proactive_talk_plugin/plugin.py",
+      "keywords": [
+        "主动发言",
+        "智能互动",
+        "情绪感知",
+        "随机触发"
+      ],
+      "categories": [
+        "interactive",
+        "automation"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "components": [
+          {
+            "type": "action",
+            "name": "proactive_greet",
+            "description": "在私聊中由意愿系统选择，主动发起简短自然开场"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "CharTyr.Maibot_hltv_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "CS2/CSGO HLTV 信息插件 (CS2/CSGO HLTV Info Plugin)",
+      "version": "1.0.0",
+      "description": "智能检测CS2/CSGO话题讨论，提供选手数据、比赛信息和实时比赛监控功能",
+      "author": {
+        "name": "MaiBot Plugin Developer",
+        "url": "https://github.com/MaiM-with-u"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/MaiM-with-u/maibot",
+      "repository_url": "https://github.com/MaiM-with-u/maibot",
+      "keywords": [
+        "cs2",
+        "csgo",
+        "hltv",
+        "esports",
+        "gaming",
+        "counter-strike"
+      ],
+      "categories": [
+        "Gaming",
+        "Information",
+        "Sports"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "information_provider",
+        "components": [
+          {
+            "type": "action",
+            "name": "cs2_topic_detection",
+            "description": "检测CS2/CSGO相关话题讨论"
+          },
+          {
+            "type": "action",
+            "name": "live_match_monitor",
+            "description": "监控进行中的比赛并提供实时数据"
+          },
+          {
+            "type": "tool",
+            "name": "get_player_info",
+            "description": "获取选手详细信息和统计数据"
+          },
+          {
+            "type": "tool",
+            "name": "get_team_info",
+            "description": "���取战队信息和排名"
+          },
+          {
+            "type": "tool",
+            "name": "get_match_info",
+            "description": "获取比赛信息和结果"
+          }
+        ],
+        "features": [
+          "智能CS2/CSGO话题检测",
+          "选手数据和统计信息查询",
+          "战队排名和成员信息",
+          "实时比赛监控和数据推送",
+          "比赛结果和历史记录查询",
+          "数据缓存和API限流保护"
+        ]
+      }
     }
   }
 ]
