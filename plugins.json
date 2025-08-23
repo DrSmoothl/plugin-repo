@@ -113,7 +113,6 @@
     "repositoryUrl": "https://github.com/XinxInxiN0/search_plugin"
   },
   {
-
     "id": "Mettafy.timed_greeting_plugin",
     "repositoryUrl": "https://github.com/Mettafy/timed_greeting_plugin"
   },
@@ -128,6 +127,10 @@
   {
     "id": "A0000Xz.MaiBot-Silence-Plugin",
     "repositoryUrl": "https://github.com/A0000Xz/MaiBot-Silence-Plugin"
+  },
+  {
+    "id": "whitefox20011120.bilibili_dynamic_push_plugin",
+    "repositoryUrl": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin"
   }
 ]
 
