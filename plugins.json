@@ -159,8 +159,13 @@
   {
     "id": "CharTyr.Maibot_hltv_plugin",
     "repositoryUrl": "https://github.com/CharTyr/Maibot_hltv_plugin"
+  },
+{
+    "id": "khIqwq.owner_auth_plugin",
+    "repositoryUrl": "https://github.com/khiqwq/owner_auth_plugin"
   }
 ]
+
 
 
 

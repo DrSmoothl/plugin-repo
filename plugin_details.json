@@ -903,7 +903,7 @@
       "repository_url": "https://github.com/khiqwq/silent_mode_plugin",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "max_version": "0.10.0"
       },
       "keywords": [
         "silent",
@@ -1095,7 +1095,7 @@
       "manifest_version": 1,
       "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
@@ -1580,13 +1580,16 @@
       "description": "定时检测B站UP主动态并推送到指定QQ群（跳过置顶、支持多UID/多群、启动日志提示）。",
       "author": {
         "name": "白狐",
-        "url": ""
+        "url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin"
       },
       "license": "AGPL-3.0",
       "host_application": {
         "min_version": "0.10.0",
-        "max_version": "0.10.0"
+        "max_version": "0.10.1"
       },
+      "homepage_url": "https://github.com/whitefox20011120",
+      "repository_url": "",
+      "config_file_name": "config.toml",
       "keywords": [
         "bilibili",
         "动态",
@@ -1599,7 +1602,6 @@
         "bilibili",
         "push"
       ],
-      "repository_url": "",
       "default_locale": "zh-CN",
       "plugin_info": {
         "is_built_in": false,
@@ -1824,6 +1826,61 @@
           "实时比赛监控和数据推送",
           "比赛结果和历史记录查询",
           "数据缓存和API限流保护"
+        ]
+      }
+    }
+  },
+  {
+    "id": "khIqwq.owner_auth_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "主人身份验证插件 (Owner Authentication Plugin)",
+      "version": "1.1.0",
+      "description": "为麦麦机器人提供主人身份验证功能，在思考流程前验证发言者身份，兼容0.10.0版本",
+      "author": {
+        "name": "风花叶",
+        "url": "https://github.com/khiqwq"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/khiqwq/owner_auth_plugin",
+      "repository_url": "https://github.com/khiqwq/owner_auth_plugin",
+      "keywords": [
+        "authentication",
+        "owner",
+        "security",
+        "identity",
+        "patch"
+      ],
+      "categories": [
+        "Security",
+        "Authentication"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "security",
+        "components": [
+          {
+            "type": "event_handler",
+            "name": "owner_auth_handler",
+            "description": "主人身份验证事件处理器",
+            "event_type": "on_message",
+            "weight": 1000,
+            "intercept_message": false
+          }
+        ],
+        "features": [
+          "主人身份验证",
+          "高优先级事件处理",
+          "思考流程前介入",
+          "安全身份识别",
+          "0.10.0版本兼容",
+          "补丁自动管理",
+          "插件卸载时自动清理"
         ]
       }
     }
