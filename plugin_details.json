@@ -1580,13 +1580,16 @@
       "description": "定时检测B站UP主动态并推送到指定QQ群（跳过置顶、支持多UID/多群、启动日志提示）。",
       "author": {
         "name": "白狐",
-        "url": ""
+        "url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin"
       },
       "license": "AGPL-3.0",
       "host_application": {
         "min_version": "0.10.0",
         "max_version": "0.10.0"
       },
+      "homepage_url": "https://github.com/whitefox20011120",
+      "repository_url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin",
+      "config_file_name": "config.toml",
       "keywords": [
         "bilibili",
         "动态",
