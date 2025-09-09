@@ -1,11 +1,11 @@
 {
   "manifest_version": 1,
   "name": "麦麦插件生成器",
-  "version": "0.0.4",
-  "description": "让你的麦麦给你写麦麦v0.1插件！",
+  "version": "0.6",
+  "description": "让你的麦麦给你写麦麦基于最新插件架构的插件！（目前beta版可直接调用llm模型而非原版的openai接口！感兴趣的可以到1群看看～",
   "author": {
     "name": "zmas"
-    "url": "https://bgithub.xyz/ZmasCloud"
+    "url": "https://github.com/ZmasCloud"
   },
   "license": "AGPL-3.0",
   "host_application": {
