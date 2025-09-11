@@ -1,15 +1,22 @@
 {
   "manifest_version": 1,
   "name": "麦麦插件生成器",
-  "version": "0.6",
-  "description": "让你的麦麦给你写麦麦基于最新插件架构的插件！（目前beta版可直接调用llm模型而非原版的openai接口！感兴趣的可以到1群看看～",
+  "version": "0.6.1",
+  "description": "让你的麦麦给你写插件！（最新beta版（麦麦1群群文件）可以直接调用llm模型而非openai接口！",
   "author": {
-    "name": "zmas"
-    "url": "https://github.com/ZmasCloud"
-  },
+    "name": "Zmas"
+  }
+},
+{
   "license": "AGPL-3.0",
   "host_application": {
-    "min_version": "1.0.0",
+    "min_version": "0.7.3",
     "max_version": "4.0.0"
+  },
+  "homepage_url": "https://github.com/zmascloud/",
+  "repository_url": "https://github.com/zmascloud/makeplugin",
+  "keywords": ["插件生成器", "ai"],
+  "categories": ["Content Generation", "External Integration"],
+  "default_locale": "zh-CN",
+  "locales_path": "_locales"
   }
-}
