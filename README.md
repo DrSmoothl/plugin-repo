@@ -1,4 +1,4 @@
-# 麦麦（MaiBot）插件中心 (MaiBot Plugin Registry)
+# 麦麦 (MaiBot) 插件中心 (MaiBot Plugin Registry)
 
 [![Validate Plugins](https://github.com/MaiM-with-u/plugin-repo/actions/workflows/validate-pr.yml/badge.svg)](https://github.com/MaiM-with-u/plugin-repo/actions/workflows/validate-pr.yml)
 [![插件数量](https://img.shields.io/badge/dynamic/json?color=blue&label=plugins&query=%24.length&url=https%3A%2F%2Fraw.githubusercontent.com%2FMaiM-with-u%2Fplugin-repo%2Fmain%2Fplugins.json)](https://github.com/MaiM-with-u/plugin-repo/blob/main/plugins.json)
@@ -6,11 +6,11 @@
 
 欢迎来到麦麦（MaiBot）官方社区插件索引仓库！
 
-这里是所有为 [麦麦（MaiBot）](https://github.com/MaiM-with-u) 开发的社区插件的中央列表。我们的目标是建立一个开放、透明、高质量的插件生态系统。
+这里是所有为 [麦麦 (MaiBot)](https://github.com/MaiM-with-u) 开发的社区插件的中央列表。我们的目标是建立一个开放、透明、高质量的插件生态系统。
 
 ## 🎯 插件展示页面
 
-您可以通过我们的 **[插件展示页面](https://maim-with-u.github.io/plugin-repo/)** 浏览所有可用的插件，该页面提供了：
+您可以通过我们的 **[插件展示页面](https://plugins.maibot.chat/)** 浏览所有可用的插件，该页面提供了：
 
 - 🔍 智能搜索功能
 - 🏷️ 标签分类系统

@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - 'plugins.json'
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   generate-details:
@@ -28,17 +31,19 @@ jobs:
           async function main() {
             try {
               const plugins = JSON.parse(fs.readFileSync('plugins.json', 'utf8'));
-              console.log(`Found ${plugins.length} plugins in plugins.json`);
+              console.log(`在 plugins.json 中找到 ${plugins.length} 个插件`);
 
               // 跳过第一个插件
               const pluginsToProcess = plugins.slice(1);
-              console.log(`Processing ${pluginsToProcess.length} plugins (skipping first one)`);
+              console.log(`准备处理 ${pluginsToProcess.length} 个插件（跳过第一个）`);
 
               const pluginDetails = [];
+              const errors = [];
 
               for (const plugin of pluginsToProcess) {
                 try {
-                  console.log(`Fetching manifest for plugin: ${plugin.id}`);
+                  console.log(`\n=== 正在获取插件清单：${plugin.id} ===`);
+                  console.log(`仓库地址：${plugin.repositoryUrl}`);
                   const manifest = await fetchManifest(plugin.repositoryUrl);
                   
                   pluginDetails.push({
@@ -46,44 +51,102 @@ jobs:
                     manifest: manifest
                   });
                   
-                  console.log(`✅ Successfully processed plugin: ${plugin.id}`);
+                  console.log(`✅ 成功处理插件：${plugin.id}`);
                 } catch (error) {
-                  console.error(`❌ Failed to process plugin ${plugin.id}: ${error.message}`);
+                  const errorMsg = `插件 ${plugin.id} 处理失败：${error.message}`;
+                  console.error(`❌ ${errorMsg}`);
+                  errors.push(errorMsg);
                   // 继续处理其他插件，不中断整个流程
                 }
               }
 
               // 写入 plugin_details.json 文件
               fs.writeFileSync('plugin_details.json', JSON.stringify(pluginDetails, null, 2));
-              console.log(`✅ Generated plugin_details.json with ${pluginDetails.length} plugins`);
+              console.log(`\n✅ 生成 plugin_details.json 文件，包含 ${pluginDetails.length} 个插件`);
+
+              // 报告错误统计
+              if (errors.length > 0) {
+                console.warn(`\n⚠️  处理过程中发现 ${errors.length} 个错误：`);
+                errors.forEach((error, index) => {
+                  console.warn(`${index + 1}. ${error}`);
+                });
+                console.warn(`\n成功率：${pluginDetails.length}/${pluginsToProcess.length} (${Math.round(pluginDetails.length / pluginsToProcess.length * 100)}%)`);
+              } else {
+                console.log(`\n🎉 所有插件处理成功！`);
+              }
 
             } catch (error) {
-              console.error(`❌ Process failed: ${error.message}`);
+              console.error(`❌ 处理失败：${error.message}`);
               process.exit(1);
             }
           }
 
           function fetchManifest(repoUrl) {
-            // 将 https://github.com/user/repo 转换为 https://raw.githubusercontent.com/user/repo/main/_manifest.json
-            const rawUrl = repoUrl.replace('github.com', 'raw.githubusercontent.com') + '/main/_manifest.json';
-            console.log(`Fetching manifest from: ${rawUrl}`);
+            // Try multiple common branch names
+            const branches = ['main', 'master', 'dev', 'develop'];
+            
+            async function tryFetchFromBranch(branch) {
+              const rawUrl = repoUrl.replace('github.com', 'raw.githubusercontent.com') + `/refs/heads/${branch}/_manifest.json`;
+              console.log(`尝试从 ${branch} 分支获取清单文件：${rawUrl}`);
+              
+              return new Promise((resolve, reject) => {
+                const timeout = setTimeout(() => {
+                  reject(new Error(`获取清单文件超时（10秒）：${rawUrl}`));
+                }, 10000);
 
-            return new Promise((resolve, reject) => {
-              https.get(rawUrl, res => {
-                if (res.statusCode !== 200) {
-                  return reject(new Error(`Could not fetch _manifest.json from repository. Status Code: ${res.statusCode}`));
-                }
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                  try {
-                    resolve(JSON.parse(data));
-                  } catch (parseError) {
-                    reject(new Error(`Invalid JSON in _manifest.json: ${parseError.message}`));
+                const req = https.get(rawUrl, res => {
+                  clearTimeout(timeout);
+                  
+                  if (res.statusCode !== 200) {
+                    return reject(new Error(`状态码：${res.statusCode}`));
                   }
+                  
+                  let data = '';
+                  res.on('data', chunk => data += chunk);
+                  res.on('end', () => {
+                    try {
+                      const manifest = JSON.parse(data);
+                      resolve({ manifest, branch, url: rawUrl });
+                    } catch (parseError) {
+                      reject(new Error(`JSON 解析失败：${parseError.message}`));
+                    }
+                  });
+                  res.on('error', err => {
+                    clearTimeout(timeout);
+                    reject(new Error(`读取响应数据时出错：${err.message}`));
+                  });
                 });
-              }).on('error', err => reject(new Error(`Network error fetching manifest: ${err.message}`)));
-            });
+
+                req.on('error', err => {
+                  clearTimeout(timeout);
+                  reject(new Error(`网络错误：${err.message}`));
+                });
+
+                req.setTimeout(10000, () => {
+                  req.destroy();
+                  reject(new Error(`请求超时`));
+                });
+              });
+            }
+
+            // Try each branch until one succeeds
+            return (async () => {
+              const errors = [];
+              
+              for (const branch of branches) {
+                try {
+                  const result = await tryFetchFromBranch(branch);
+                  console.log(`✅ 成功从 ${result.branch} 分支获取到清单文件`);
+                  return result.manifest;
+                } catch (error) {
+                  errors.push(`${branch} 分支: ${error.message}`);
+                  console.log(`❌ ${branch} 分支获取失败: ${error.message}`);
+                }
+              }
+              
+              // If all branches failed, throw a comprehensive error
+              throw new Error(`无法从任何分支获取 _manifest.json 文件。尝试的分支：${branches.join(', ')}。错误详情：\n${errors.map((err, i) => `${i + 1}. ${err}`).join('\n')}。\n\n请检查：\n1. 文件名是否为 '_manifest.json'（注意下划线）\n2. 仓库是否为公开仓库\n3. 文件是否存在于上述分支中\n仓库地址：${repoUrl}`);
+            })();
           }
 
           main();
@@ -95,8 +158,9 @@ jobs:
           git config --local user.name "GitHub Action"
           git add plugin_details.json
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "没有变更需要提交"
           else
-            git commit -m "Auto-generate plugin_details.json"
+            git commit -m "自动生成 plugin_details.json"
             git push
+            echo "✅ 已提交并推送 plugin_details.json 更新"
           fi

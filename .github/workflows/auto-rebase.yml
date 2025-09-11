@@ -1,0 +1,73 @@
+name: Auto Rebase Helper
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  rebase:
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/rebase')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get PR info
+        id: pr-info
+        run: |
+          PR_NUMBER="${{ github.event.issue.number }}"
+          PR_INFO=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER")
+          
+          echo "pr-ref=$(echo "$PR_INFO" | jq -r '.head.ref')" >> $GITHUB_OUTPUT
+          echo "pr-repo=$(echo "$PR_INFO" | jq -r '.head.repo.full_name')" >> $GITHUB_OUTPUT
+
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          repository: ${{ steps.pr-info.outputs.pr-repo }}
+          ref: ${{ steps.pr-info.outputs.pr-ref }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Attempt Auto Rebase
+        run: |
+          echo "尝试对主分支进行 PR 变基操作..."
+          
+          # Fetch latest main
+          git fetch origin main
+          
+          # Try to rebase
+          if git rebase origin/main; then
+            echo "✅ 变基成功！正在推送更改..."
+            git push --force-with-lease origin HEAD
+            
+            # Comment on PR
+            curl -X POST \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" \
+              -d '{"body":"✅ 自动变基完成！PR 已更新为主分支的最新更改。"}'
+          else
+            echo "❌ 由于冲突，变基失败。需要手动干预。"
+            
+            # Abort the rebase
+            git rebase --abort
+            
+            # Comment on PR with instructions
+            curl -X POST \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" \
+              -d '{
+                "body": "❌ 由于合并冲突，自动变基失败。请手动解决：\n\n```bash\ngit fetch origin\ngit rebase origin/main\n# 解决 plugins.json 中的冲突\n# 通常保留现有插件和新插件\ngit add .\ngit rebase --continue\ngit push --force-with-lease\n```\n\n对于 plugins.json 冲突，通常您需要在数组中保留现有插件和您的新插件。"
+              }'
+            
+            exit 1
+          fi
+
+      - name: Update PR status
+        if: success()
+        run: |
+          echo "变基成功完成"
