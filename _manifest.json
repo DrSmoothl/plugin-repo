@@ -5,9 +5,7 @@
   "description": "让你的麦麦给你写插件！（最新beta版（麦麦1群群文件）可以直接调用llm模型而非openai接口！",
   "author": {
     "name": "Zmas"
-  }
-},
-{
+  },
   "license": "AGPL-3.0",
   "host_application": {
     "min_version": "0.7.3",
@@ -19,4 +17,4 @@
   "categories": ["Content Generation", "External Integration"],
   "default_locale": "zh-CN",
   "locales_path": "_locales"
-  }
+}
