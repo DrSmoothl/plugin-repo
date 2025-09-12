@@ -1,3 +1,4 @@
+
 [
   {
     "id": "MaiM-with-u.example-plugin1",
@@ -187,7 +188,10 @@
   {
     "id": "CharTyr.MaiBot-DetailedExplanation-Plugin",
     "repositoryUrl": "https://github.com/CharTyr/MaiBot-DetailedExplanation-Plugin"
+  },
+  {
+    "id": "Heximiao.repeat_plugin",
+    "repositoryUrl": "https://github.com/Heximiao/repeat_plugin"
   }
 ]
-
 
