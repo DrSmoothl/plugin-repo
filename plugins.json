@@ -191,6 +191,10 @@
   {
     "id": "Heximiao.repeat_plugin",
     "repositoryUrl": "https://github.com/Heximiao/repeat_plugin"
+  },
+  {
+    "id": "chengming0v0.regex_filter",
+    "repositoryUrl": "https://github.com/chenming0v0/chenmumu_maimai_regex_filter"
   }
 ]
 
