@@ -4,15 +4,15 @@
     "repositoryUrl": "https://github.com/MaiM-with-u/MaiBot"
   },
   {
-    "id":"SengokuCola.Mute-Plugin",
+    "id": "SengokuCola.Mute-Plugin",
     "repositoryUrl": "https://github.com/SengokuCola/MutePlugin"
   },
   {
-    "id":"SengokuCola.BetterExpressionPlugin",
+    "id": "SengokuCola.BetterExpressionPlugin",
     "repositoryUrl": "https://github.com/SengokuCola/BetterExpressionPlugin"
   },
   {
-    "id":"SengokuCola.BetterFrequency",
+    "id": "SengokuCola.BetterFrequency",
     "repositoryUrl": "https://github.com/SengokuCola/BetterFrequency"
   },
   {
@@ -51,7 +51,7 @@
     "id": "A0000Xz.MaiBot-AntiPoke-Plugin",
     "repositoryUrl": "https://github.com/A0000Xz/MaiBot-AntiPoke-Plugin"
   },
-   {
+  {
     "id": "tts_voice_plugin",
     "repositoryUrl": "https://github.com/xuqian13/tts_voice_plugin"
   },
@@ -99,7 +99,6 @@
     "id": "SkillfulPainter.repeat_plugin",
     "repositoryUrl": "https://github.com/SkillfulPainter/repeat_plugin"
   },
-  
   {
     "id": "foxcyber907.balance_plugin",
     "repositoryUrl": "https://github.com/foxcyber907/maim_balance_plugin"
@@ -117,7 +116,6 @@
     "repositoryUrl": "https://github.com/xuqian13/gsv2p_tts_plugin"
   },
   {
-
     "id": "Mettafy.timed_greeting_plugin",
     "repositoryUrl": "https://github.com/Mettafy/timed_greeting_plugin"
   },
@@ -134,19 +132,16 @@
     "repositoryUrl": "https://github.com/A0000Xz/MaiBot-Silence-Plugin"
   },
   {
-
     "id": "whitefox20011120.bilibili_dynamic_push_plugin",
     "repositoryUrl": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin"
   },
   {
     "id": "XinxInxiN0.bilibili_video_sender_plugin",
     "repositoryUrl": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin"
-
   },
   {
     "id": "XXXxx7258.google_search_plugin",
     "repositoryUrl": "https://github.com/XXXxx7258/google_search_plugin"
-
   },
   {
     "id": "yhny1001.proactive_talk_plugin",
@@ -191,10 +186,9 @@
   {
     "id": "Heximiao.repeat_plugin",
     "repositoryUrl": "https://github.com/Heximiao/repeat_plugin"
+  },
+  {
+    "id": "trustnight.epic_free_plugin-MaiMBot",
+    "repositoryUrl": "https://github.com/trustnight/epic_free_plugin-MaiMBot.git"
   }
 ]
-
-
-
-
-
