@@ -128,6 +128,10 @@
   {
     "id": "A0000Xz.MaiBot-Silence-Plugin",
     "repositoryUrl": "https://github.com/A0000Xz/MaiBot-Silence-Plugin"
+  },
+  {
+    "id": "whitefox20011120.recall_manager_plugin",
+    "repositoryUrl": "https://github.com/whitefox20011120/recall_manager_plugin"
   }
 ]
 
