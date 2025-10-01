@@ -16,7 +16,7 @@
 <img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/c125d839-6a34-42a1-8685-e4ca9ed3083e" />
 
 ## 使用方法
-1. 选择fzjyp-patch-1，下载插件。修改config.toml中的图片保存路径，改为你图库的路径。
+1. 选择fzjyp-patch-1，下载插件。修改config.toml中的图片源路径，改为你图库的路径。
 2. 将pc_setu_plugin文件夹放入MaiM-with-u\MaiBot\plugins
 3. 打开Maibot，自动加载插件。
 
