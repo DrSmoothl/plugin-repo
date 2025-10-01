@@ -1,0 +1,13 @@
+[plugin]
+name = "pc_setu_plugin"
+version = "1.0.0"
+enabled = true  # 是否启用插件，默认true
+description = "从本地文件夹随机发送图片"
+
+[image]
+source_dir = "D:\\pic"  # 图片源文件夹路径（注意双反斜杠）
+max_image_size = 1048576  # 单位: 字节，默认1MB
+
+[logging]
+level = "INFO"  # 日志级别，支持 `DEBUG`、`INFO`、`WARNING`、`ERROR`，默认 `INFO`
+prefix = "PixivSetu"  # 日志前缀

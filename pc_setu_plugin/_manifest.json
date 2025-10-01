@@ -1,0 +1,37 @@
+{
+  "manifest_version": 1,
+  "name": "pc_setu_plugin",
+  "version": "1.0.0",
+  "description": "从本地文件夹随机发送图片",
+  "author": {"name": "fzjyp", "url": "https://github.com/tt-P607"},
+  "homepage_url": "https://github.com/tt-P607/MaiMbot-PC-Setu-Plugin",
+  "repository_url": "https://github.com/tt-P607/MaiMbot-PC-Setu-Plugin",
+  "host_application": {"min_version": "0.10.3", "max_version": "0.10.3"},
+  "license": "MIT",
+  "keywords": ["PC", "setu", "图片", "Lolicon API"],
+  "categories": ["娱乐", "图片", "API"],
+  "config_file_name": "config.toml",
+  "config_section_descriptions": {
+    "plugin": "插件基本配置",
+    "components": "组件启用控制",
+    "cache": "缓存相关配置",
+    "logging": "日志记录配置"
+  },
+  "config_schema": {
+    "plugin": {
+      "config_version": {"type": "str", "default": "1.0.0", "description": "插件配置文件版本号"},
+      "enabled": {"type": "bool", "default": true, "description": "是否启用插件"}
+    },
+    "components": {
+      "enable_pc_setu": {"type": "bool", "default": true, "description": "是否启用发图功能"}
+    },
+    "cache": {
+      "expire_seconds": {"type": "int", "default": 7200, "description": "缓存有效期(秒)"},
+      "max_image_size": {"type": "int", "default": 1048576, "description": "图片最大字节数(默认1MB)"}
+    },
+    "logging": {
+      "level": {"type": "str", "default": "INFO", "description": "日志级别", "choices": ["DEBUG", "INFO", "WARNING", "ERROR"]},
+      "prefix": {"type": "str", "default": "[PCSetu]", "description": "日志前缀"}
+    }
+  }
+}
