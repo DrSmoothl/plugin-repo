@@ -210,5 +210,9 @@
   {
     "id": "namchengwuqiu.gemini_drawer",
     "repositoryUrl": "https://github.com/namchengwuqiu/gemini_drawer"
+  },
+{
+    "id": "fzjyp.MaiMbot-PC-Setu-Plugin",
+    "repositoryUrl": "https://github.com/fzjyp/MaiMbot-PC-Setu-Plugin/tree/fzjyp-patch-1"
   }
 ]
