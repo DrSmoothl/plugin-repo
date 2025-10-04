@@ -218,6 +218,10 @@
   {
     "id": "custom_commands_plugin",
     "repositoryUrl": "https://github.com/TAIY2020/custom_commands_plugin"
+  },
+  {
+    "id": "wikinty.title_plugin",
+    "repositoryUrl": "https://github.com/wikinty/title_plugin"
   }
 
 ]
