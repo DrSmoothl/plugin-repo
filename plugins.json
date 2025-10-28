@@ -236,7 +236,12 @@
     "repositoryUrl": "https://github.com/Kristen23557/MaiBot-Tarots-Plugin-REBORN"
   },
   {
-    "id": "panzer931_russian_roulette",
-    "repositoryUrl": "https://github.com/panzer931/cj/tree/master/russian_roulette"
+  {
+    "id": "Kristen23557.Werewolves-Master-Plugin",
+    "repositoryUrl": "https://github.com/Kristen23557/Werewolves-Master-Plugin"
+  },
+  {
+    "id": "panzer931.russian-roulette",
+    "repositoryUrl": "https://github.com/panzer931/cj"
   }
 ]
