@@ -25,37 +25,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Check for merge conflicts
-        run: |
-          cd pr
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          
-          # Try to merge main branch into PR branch to detect conflicts
-          if ! git merge origin/main --no-commit --no-ff; then
-            echo "❌ 此 PR 与主分支存在合并冲突。"
-            echo "这通常发生在以下情况："
-            echo "1. 在创建此 PR 后，另一个插件已被合并"
-            echo "2. 多人同时提交插件"
-            echo ""
-            echo "解决此冲突的步骤："
-            echo "1. 拉取主分支的最新更改：git pull origin main"
-            echo "2. 解决 plugins.json 中的冲突（通常保留两个插件）"
-            echo "3. 提交解决的更改：git add . && git commit -m 'Resolve merge conflict'"
-            echo "4. 推送更改：git push"
-            echo ""
-            echo "对于 plugins.json 冲突，通常您需要保留现有插件和您的新插件。"
-            
-            # Reset the merge attempt
-            git merge --abort 2>/dev/null || true
-            exit 1
-          else
-            echo "✅ 未检测到合并冲突"
-            # Reset the merge since we only wanted to test
-            git reset --hard HEAD
-          fi
-
       - name: Validate new plugin entry
         run: |
           node <<'EOL'

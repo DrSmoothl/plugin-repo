@@ -4,16 +4,18 @@
     "manifest": {
       "manifest_version": 1,
       "name": "群聊禁言管理插件 (Mute Plugin)",
-      "version": "3.1.0",
+      "version": "4.2.0",
       "description": "群聊禁言管理插件，提供智能禁言功能",
       "author": {
         "name": "SengokuCola",
         "url": "https://github.com/SengokuCola"
       },
-      "license": "GPL-v3.0-or-later",
+      "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0"
+        "min_version": "0.10.3"
       },
+      "homepage_url": "https://github.com/SengokuCola",
+      "repository_url": "https://github.com/SengokuCola/MutePlugin",
       "keywords": [
         "mute",
         "ban",
@@ -36,7 +38,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "塔罗牌插件",
-      "version": "1.3.0",
+      "version": "1.4.6",
       "description": "提供了抽塔罗牌占卜功能，具有模拟人类的调用方式和独特自定义风格的解牌回复。牌面为B站幻星集",
       "author": {
         "name": "A肆零西烛",
@@ -45,7 +47,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.1",
-        "max_version": "0.9.1"
+        "max_version": "0.11.1"
       },
       "keywords": [
         "tarot",
@@ -108,8 +110,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.9.0",
-        "max_version": "0.9.0"
+        "min_version": "0.10.2",
+        "max_version": "0.10.2"
       },
       "homepage_url": "https://github.com/schxar/doubao_search_plugin",
       "repository_url": "https://github.com/schxar/doubao_search_plugin",
@@ -204,15 +206,15 @@
     }
   },
   {
-    "id": "ZmasCloud.makeplugin",
+    "id": "ZmasCloud.makeplugin-0.6",
     "manifest": {
       "manifest_version": 1,
       "name": "麦麦插件生成器",
       "version": "0.0.4",
-      "description": "让你的麦麦给你写麦麦v0.1插件！请查看源码readme.md教程！！！",
+      "description": "让你的麦麦给你写麦麦v0.1插件！",
       "author": {
         "name": "zmas",
-        "url": "https://github.com/ZmasCloud"
+        "url": "https://bgithub.xyz/ZmasCloud"
       },
       "license": "AGPL-3.0",
       "host_application": {
@@ -333,7 +335,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "宵禁插件",
-      "version": "1.3.0",
+      "version": "1.4.6",
       "description": "在机器人是QQ群聊管理员的情况下实现了自动宵禁功能",
       "author": {
         "name": "A肆零西烛",
@@ -342,7 +344,7 @@
       "license": "GPL-v3.0-or-later",
       "host_application": {
         "min_version": "0.9.1",
-        "max_version": "0.9.1"
+        "max_version": "0.11.1"
       },
       "keywords": [
         "mute",
@@ -367,7 +369,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "防戳插件",
-      "version": "1.3.0",
+      "version": "1.4.6",
       "description": "帮助你的麦麦实现人性化戳一戳互动的同时，避免过多戳一戳捣乱",
       "author": {
         "name": "A肆零西烛",
@@ -376,7 +378,7 @@
       "license": "GPL-v3.0-or-later",
       "host_application": {
         "min_version": "0.9.1",
-        "max_version": "0.9.1"
+        "max_version": "0.11.1"
       },
       "keywords": [
         "poke",
@@ -396,44 +398,36 @@
     "id": "tts_voice_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "GPT-SoVITS 语音合成插件（多风格版）",
-      "version": "1.0.0",
-      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多风格、多语言，适用于语音回复与朗读。",
+      "name": "GPT-SoVITS 语音合成插件",
+      "version": "2.0.0",
+      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多种语言和多风格语音合成。",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
-      "license": "AGPL-3.0",
+      "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.9.0",
+        "max_version": "1.0.0"
       },
-      "homepage_url": "https://github.com/xuqian13",
-      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "keywords": [
-        "TTS",
+        "tts",
         "语音合成",
-        "GPT-SoVITS",
+        "文本转语音",
+        "gpt-sovits",
+        "语音",
+        "朗读",
         "多风格",
-        "多语言"
+        "语音播报"
       ],
       "categories": [
-        "语音",
-        "聊天增强"
+        "Utility",
+        "Communication",
+        "Accessibility"
       ],
+      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "default_locale": "zh-CN",
-      "locales_path": "_locales",
-      "plugin_info": {
-        "is_built_in": false,
-        "plugin_type": "general",
-        "components": [
-          {
-            "type": "action",
-            "name": "tts_voice_action",
-            "description": "将文本内容转换为语音并发送，支持多风格多语言"
-          }
-        ]
-      }
+      "locales_path": "_locales"
     }
   },
   {
@@ -441,7 +435,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "网易云音乐点歌插件",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "description": "基于网易云音乐API的智能点歌插件，支持音乐搜索和点歌功能。",
       "author": {
         "name": "靓仔",
@@ -450,7 +444,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "0.9.0"
+        "max_version": "1.0.0"
       },
       "keywords": [
         "音乐",
@@ -485,8 +479,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.10.2",
+        "max_version": "0.10.2"
       },
       "homepage_url": "https://github.com/schxar/doubao_pic_plugin",
       "repository_url": "https://github.com/schxar/doubao_pic_plugin",
@@ -532,7 +526,7 @@
         "features": [
           "智能LLM判定生成时机",
           "高质量AI图片生成",
-          "结果缓存机制",
+          "���果缓存机制",
           "多种图片尺寸支持",
           "完整的错误处理"
         ]
@@ -552,8 +546,8 @@
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.10.2",
+        "max_version": "0.10.2"
       },
       "homepage_url": "https://github.com/schxar/music_plugin",
       "repository_url": "https://github.com/schxar/music_plugin",
@@ -759,7 +753,7 @@
       "repository_url": "https://github.com/khiqwq/silent_mode_plugin",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "max_version": "0.10.0"
       },
       "keywords": [
         "silent",
@@ -799,20 +793,19 @@
     "id": "1021143806.custom_pic_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "custom_pic_plugin",
-      "version": "1.2.1",
-      "description": "一个基于魔搭api 的生图插件，根据 0.8.0 api 文档修改，魔搭平台是一个公益网址，可以免费调用各种 lora 画图模型。插件支持其他 api 格式，支持魔搭api、火山api、chatany api 。可自定义正面提示词、负面提示词，可指定图片大小或让麦麦自己决定，可以调用 lora 模型调整画风生图，需要有一定 AI 绘图基础，适合喜欢折腾的人。",
+      "name": "自定义智能多模型图片生成插件（custom_pic_plugin）",
+      "version": "3.1.2",
+      "description": "智能多模型图片生成插件，支持文生图和图生图自动识别。兼容OpenAI、豆包、Gemini、魔搭等多种API格式。提供命令式风格转换、模型配置管理、结果缓存等功能。支持动态模型切换、风格别名、调试开关等高级特性。",
       "author": {
-        "name": "Ptrel",
+        "name": "Ptrel，Rabbit",
         "url": "https://github.com/1021143806/custom_pic_plugin"
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.0"
+        "min_version": "0.10.0"
       },
-      "homepage_url": "https://github.com/MaiM-with-u/maibot",
-      "repository_url": "https://github.com/MaiM-with-u/maibot",
+      "homepage_url": "https://github.com/1021143806/custom_pic_plugin",
+      "repository_url": "https://github.com/1021143806/custom_pic_plugin",
       "keywords": [
         "draw",
         "Expression",
@@ -832,20 +825,49 @@
           {
             "type": "action",
             "name": "draw_picture",
-            "description": "画一张图",
+            "description": "智能图片生成，自动识别文生图/图生图",
             "activation_modes": [
-              "keyword"
+              "keyword",
+              "llm_judge"
             ],
             "keywords": [
-              "画张图"
+              "画",
+              "绘制",
+              "生成图片",
+              "画图",
+              "图生图",
+              "修改图片",
+              "风格转换"
             ]
+          },
+          {
+            "type": "command",
+            "name": "pic_generation_command",
+            "description": "风格化图生图命令：/dr <风格>",
+            "pattern": "/dr"
+          },
+          {
+            "type": "command",
+            "name": "pic_config_command",
+            "description": "模型配置管理：/dr list、/dr set等",
+            "pattern": "/dr"
+          },
+          {
+            "type": "command",
+            "name": "pic_style_command",
+            "description": "风格管理：/dr styles、/dr style等",
+            "pattern": "/dr"
           }
         ],
         "features": [
-          "自定义画风",
-          "高自由度模型",
-          "api自选",
-          "需要一定ai绘图能力"
+          "智能文生图/图生图识别",
+          "多API格式支持(OpenAI/豆包/Gemini/魔搭)",
+          "命令式风格转换",
+          "动态模型配置管理",
+          "风格别名系统",
+          "结果缓存机制",
+          "调试开关控制",
+          "支持图生图开关"
         ]
       }
     }
@@ -855,7 +877,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "麦麦的怪物猎人集会码插件",
-      "version": "1.0.0",
+      "version": "1.2.0",
       "description": "提供怪物猎人集会码的登记、查询和删除功能，支持多群组隔离管理",
       "author": {
         "name": "倒过来的蛋糕蛋糕",
@@ -870,26 +892,15 @@
         "集会"
       ],
       "categories": [
-        "游戏",
-        "实用工具"
+        "Entertainment & Interaction",
+        "Utility Tools"
       ],
       "repository_url": "https://github.com/dkdcakedangao/MaiBot-MHWJH-Plugin",
       "default_locale": "zh-CN",
       "locales_path": "_locales",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.1"
-      },
-      "plugin_info": {
-        "is_built_in": false,
-        "plugin_type": "general",
-        "components": [
-          {
-            "type": "action",
-            "name": "MHWJHAction",
-            "description": "处理怪物猎人集会码的登记、查询和删除操作"
-          }
-        ]
+        "min_version": "0.9.0",
+        "max_version": "0.10.1"
       }
     }
   },
@@ -898,16 +909,15 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "1.2.1",
+      "version": "2.4.5",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
         "url": "https://github.com/internetsb"
       },
-      "license": "AGPL-v3.0",
+      "license": "MIT",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.1"
+        "min_version": "0.10.3"
       },
       "homepage_url": "https://github.com/internetsb/Maizone",
       "repository_url": "https://github.com/internetsb/Maizone",
@@ -946,29 +956,32 @@
     }
   },
   {
-    "id": "liuchunyu44.acpoke_plugin",
+    "id": "Heximiao.acpoke_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "acpoke_plugin",
+      "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.3.3",
-      "description": "一个主动发起“戳一戳”的 MaiMai 插件",
+      "version": "0.4.2",
+      "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
-        "email": "lcy1416603026@gmail.com",
-        "link": "https://github.com/liuchunyu44/acpoke_plugin"
+        "url": "https://github.com/Heximiao/acpoke_plugin",
+        "email": "lcy1416603026@gmail.com"
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.8.0",
-        "max_version": "0.8.10"
+        "min_version": "0.9.0",
+        "max_version": "0.10.2"
       },
       "entry": "plugin.py",
+      "homepage_url": "https://github.com/Heximiao/acpoke_plugin",
+      "repository_url": "https://github.com/Heximiao/acpoke_plugin",
       "keywords": [
         "poke",
         "maimai",
-        "插件",
-        "自动戳人"
+        "互动",
+        "自动戳人",
+        "插件"
       ],
       "categories": [
         "Fun",
@@ -976,7 +989,22 @@
         "Automation"
       ],
       "default_locale": "zh-CN",
-      "locales_path": "_locales"
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "chat",
+        "components": [
+          {
+            "type": "action",
+            "name": "ActivePokeAction",
+            "description": "主动模式下，插件可以自动戳一戳群成员，增强群聊互动体验"
+          }
+        ],
+        "features": [
+          "戳一戳",
+          "自动互动"
+        ]
+      }
     }
   },
   {
@@ -1091,6 +1119,1739 @@
         ],
         "features": [
           "戳一戳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "xuqian13.ai_voice_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "AI语音插件",
+      "version": "1.0.0",
+      "description": "基于 MaiCore 的 AI 语音合成插件，支持多种音色、自动播报与命令触发，提供高质量的文本转语音功能。",
+      "author": {
+        "name": "靓仔",
+        "url": ""
+      },
+      "license": "AGPL-3.0",
+      "homepage_url": "",
+      "repository_url": "",
+      "keywords": [
+        "TTS",
+        "语音合成",
+        "AI语音",
+        "多音色",
+        "语音",
+        "AI",
+        "文本转语音",
+        "MaiCore"
+      ],
+      "categories": [
+        "语音",
+        "AI",
+        "聊天增强",
+        "娱乐"
+      ],
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "1.0.0"
+      },
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "action",
+            "name": "ai_voice_action",
+            "description": "智能语音合成Action，支持关键词自动触发，将文本转换为AI语音并发送"
+          },
+          {
+            "type": "command",
+            "name": "ai_voice_command",
+            "description": "手动语音合成Command，通过/voice命令触发，支持指定音色参数"
+          }
+        ],
+        "features": [
+          "多种音色支持（小新、妲己、酥心御姐等）",
+          "双模式触发（智能触发和手动触发）",
+          "音色别名映射，方便用户使用",
+          "仅群聊可用，确保使用场景合适",
+          "完善的错误处理和日志记录",
+          "配置灵活，支持自定义默认音色"
+        ],
+        "dependencies": {
+          "python": [],
+          "system": [],
+          "plugins": []
+        },
+        "api_info": {
+          "provider": "MaiCore内置",
+          "endpoint": "AI_VOICE_SEND命令",
+          "authentication": "无需认证",
+          "rate_limit": "根据系统限制"
+        }
+      },
+      "voice_characters": {
+        "小新": "lucy-voice-laibixiaoxin",
+        "猴哥": "lucy-voice-houge",
+        "四郎": "lucy-voice-silang",
+        "东北老妹儿": "lucy-voice-guangdong-f1",
+        "广西大表哥": "lucy-voice-guangxi-m1",
+        "妲己": "lucy-voice-daji",
+        "霸道总裁": "lucy-voice-lizeyan",
+        "酥心御姐": "lucy-voice-suxinjiejie",
+        "说书先生": "lucy-voice-m8",
+        "憨憨小弟": "lucy-voice-male1",
+        "憨厚老哥": "lucy-voice-male3",
+        "吕布": "lucy-voice-lvbu",
+        "元气少女": "lucy-voice-xueling",
+        "文艺少女": "lucy-voice-f37",
+        "磁性大叔": "lucy-voice-male2",
+        "邻家小妹": "lucy-voice-female1",
+        "低沉男声": "lucy-voice-m14",
+        "傲娇少女": "lucy-voice-f38",
+        "爹系男友": "lucy-voice-m101",
+        "暖心姐姐": "lucy-voice-female2",
+        "温柔妹妹": "lucy-voice-f36",
+        "书香少女": "lucy-voice-f34"
+      },
+      "configuration": {
+        "config_file": "config.toml",
+        "auto_generate": true,
+        "sections": [
+          {
+            "name": "plugin",
+            "description": "插件基本配置"
+          },
+          {
+            "name": "voice",
+            "description": "AI语音功能配置"
+          },
+          {
+            "name": "components",
+            "description": "组件启用控制"
+          }
+        ]
+      },
+      "usage_examples": [
+        {
+          "type": "action",
+          "description": "关键词自动触发",
+          "example": "用户：请用语音说\"你好世界\"\n机器人：[自动生成语音文件并发送]"
+        },
+        {
+          "type": "command",
+          "description": "手动命令触发",
+          "example": "/voice 你好世界 小新"
+        },
+        {
+          "type": "command",
+          "description": "使用默认音色",
+          "example": "/voice 今天天气不错"
+        }
+      ]
+    }
+  },
+  {
+    "id": "xuqian13.gsv2p_tts_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "GSV2P TTS 插件",
+      "version": "1.0.0",
+      "description": "基于 GSV2P API 的文本转语音插件，支持多种语言和高级语音合成参数。",
+      "author": {
+        "name": "靓仔",
+        "url": "https://github.com/xuqian13"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "1.0.0"
+      },
+      "keywords": [
+        "tts",
+        "语音合成",
+        "文本转语音",
+        "gsv2p",
+        "语音",
+        "朗读",
+        "音色",
+        "语音播报"
+      ],
+      "categories": [
+        "Utility",
+        "Communication",
+        "Accessibility"
+      ],
+      "repository_url": "https://github.com/xuqian13/gsv2p_tts_plugin",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "Mettafy.timed_greeting_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "定时问候插件",
+      "version": "0.2.0",
+      "description": "在指定时间段内，根据关键词向指定用户或群组发送由LLM生成的语句。",
+      "author": {
+        "name": "Mettafy",
+        "url": "https://github.com/Mettafy"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.9.1",
+        "max_version": "0.9.1"
+      },
+      "keywords": [
+        "定时",
+        "问候",
+        "早安晚安",
+        "提醒",
+        "scheduled",
+        "greeting"
+      ],
+      "categories": [
+        "工具",
+        "提醒",
+        "Tools",
+        "Reminder"
+      ],
+      "repository_url": "https://github.com/Mettafy/timed_greeting_plugin",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "SteamedbunsMC.SomeUtils",
+    "manifest": {
+      "manifest_version": 0.1,
+      "name": "QQ_Bot_Some_Utils",
+      "version": "0.1.0",
+      "description": "A simple qq group MaiMBot utils plugin.A piece of mess.",
+      "author": {
+        "name": "RandomDeveloper",
+        "url": "rand0mk4cas@outlook.com"
+      },
+      "license": "MIT License",
+      "host_application": {
+        "min_version": "0.8.0"
+      }
+    }
+  },
+  {
+    "id": "Windpicker-owo.InternetSearchPlugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦联网搜索插件",
+      "version": "1.1.0",
+      "description": "提供联网搜索工具，使麦麦可以根据需要上网搜索信息",
+      "author": {
+        "name": "Windpicker_owo",
+        "url": "https://github.com/Windpicker-owo"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.0",
+        "max_version": "0.10.2"
+      },
+      "homepage_url": "https://github.com/Windpicker-owo/InternetSearchPlugin",
+      "repository_url": "https://github.com/Windpicker-owo/InternetSearchPlugin",
+      "keywords": [
+        "tool",
+        "search",
+        "online"
+      ],
+      "categories": [
+        "Internet",
+        "Search"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "components": [
+          {
+            "type": "tool",
+            "name": "search_online",
+            "description": "使用联网模型搜索"
+          }
+        ],
+        "features": [
+          "接入联网模型",
+          "扩展麦麦能获取到的信息",
+          "可供外部插件调用",
+          "让麦麦更聪明"
+        ]
+      }
+    }
+  },
+  {
+    "id": "A0000Xz.MaiBot-Silence-Plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "沉默插件",
+      "version": "1.4.6",
+      "description": "使麦麦更人性化地保持沉默",
+      "author": {
+        "name": "A肆零西烛",
+        "url": "https://github.com/A0000Xz"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.9.1",
+        "max_version": "0.11.1"
+      },
+      "keywords": [
+        "silence"
+      ],
+      "categories": [
+        "Moderation"
+      ],
+      "repository_url": "https://github.com/A0000Xz/MaiBot-Silence-Plugin",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "whitefox20011120.bilibili_dynamic_push_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "B站动态推送插件",
+      "version": "1.3.0",
+      "description": "定时检测B站UP主动态并推送到指定QQ群（跳过置顶、支持多UID/多群、启动日志提示）。",
+      "author": {
+        "name": "白狐",
+        "url": "https://github.com/whitefox20011120"
+      },
+      "license": "AGPL-3.0",
+      "host_application": {
+        "min_version": "0.9.0"
+      },
+      "homepage_url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin",
+      "repository_url": "",
+      "config_file_name": "config.toml",
+      "keywords": [
+        "bilibili",
+        "动态",
+        "自动推送",
+        "UP主",
+        "QQ"
+      ],
+      "categories": [
+        "automation",
+        "bilibili",
+        "push",
+        "Utility Tools"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "components": [
+          {
+            "type": "action",
+            "name": "auto_push",
+            "description": "自动监控UP主动态并推送到QQ群"
+          }
+        ]
+      },
+      "python_dependencies": [
+        "aiohttp"
+      ]
+    }
+  },
+  {
+    "id": "XinxInxiN0.bilibili_video_sender_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦发B站视频",
+      "version": "1.0.7",
+      "description": "让麦麦解析b站视频链接并发送，群聊私聊都可用",
+      "author": {
+        "name": "XinxInxiN0",
+        "url": "https://github.com/XinxInxiN0"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.11.0"
+      },
+      "homepage_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
+      "repository_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
+      "config_file_name": "config.toml",
+      "keywords": [
+        "bilibili",
+        "video",
+        "send"
+      ],
+      "categories": [
+        "Multimedia",
+        "Utility Tools"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [],
+        "features": [
+          "自动识别B站链接",
+          "发送视频文件",
+          "支持b23.tv短链"
+        ]
+      }
+    }
+  },
+  {
+    "id": "XXXxx7258.google_search_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "网页搜索以及缩写翻译以及图片搜索插件 (Web Search and Abbreviation Translation Plugin and...)",
+      "version": "1.0.0",
+      "description": "支持多个搜索引擎的网络搜索以及聚合翻译搜索以及图片搜索插件，具有自动降级功能。",
+      "author": {
+        "name": "晴空",
+        "url": "https://github.com/XXXxx7258"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/XXXxx7258/google_search_plugin",
+      "repository_url": "https://github.com/XXXxx7258/google_search_plugin",
+      "keywords": [
+        "google",
+        "search",
+        "web",
+        "internet",
+        "图片",
+        "查询",
+        "搜索",
+        "多引擎",
+        "翻译",
+        "缩写",
+        "nbnhhsh"
+      ],
+      "categories": [
+        "Search",
+        "Utilities",
+        "Translation",
+        "image"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "search",
+        "components": [
+          {
+            "type": "tool",
+            "name": "web_search",
+            "description": "进行网络搜索并聚合结果"
+          },
+          {
+            "type": "tool",
+            "name": "abbreviation_translate",
+            "description": "翻译中文网络缩写词汇"
+          }
+        ],
+        "features": [
+          "多引擎支持：Google、Bing、搜狗",
+          "自动降级机制",
+          "可配置的搜索引擎顺序",
+          "重试机制",
+          "丰富的配置选项",
+          "中文缩写翻译功能",
+          "神奇海螺API集成",
+          "翻译结果缓存机制"
+        ]
+      }
+    }
+  },
+  {
+    "id": "yhny1001.proactive_talk_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "主动发言插件",
+      "plugin_name": "proactive_talk",
+      "author": {
+        "name": "yhny1001",
+        "url": "https://github.com/yhny1001"
+      },
+      "description": "智能主动发言系统 - 低频率高质量的机器人主动互动",
+      "version": "2.0.0",
+      "homepage_url": "https://github.com/yhny1001/proactive_talk_plugin",
+      "repository_url": "https://github.com/yhny1001/proactive_talk_plugin",
+      "license": "GPL-3.0-or-later",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.9.1"
+      },
+      "is_built_in": false,
+      "plugin_type": "interactive",
+      "entry": "proactive_talk_plugin/plugin.py",
+      "keywords": [
+        "主动发言",
+        "智能互动",
+        "情绪感知",
+        "随机触发"
+      ],
+      "categories": [
+        "interactive",
+        "automation"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "components": [
+          {
+            "type": "action",
+            "name": "proactive_greet",
+            "description": "在私聊中由意愿系统选择，主动发起简短自然开场"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "CharTyr.Maibot_hltv_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "CS2/CSGO HLTV 信息插件 (CS2/CSGO HLTV Info Plugin)",
+      "version": "1.0.0",
+      "description": "智能检测CS2/CSGO话题讨论，提供选手数据、比赛信息和实时比赛监控功能",
+      "author": {
+        "name": "MaiBot Plugin Developer",
+        "url": "https://github.com/MaiM-with-u"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/MaiM-with-u/maibot",
+      "repository_url": "https://github.com/MaiM-with-u/maibot",
+      "keywords": [
+        "cs2",
+        "csgo",
+        "hltv",
+        "esports",
+        "gaming",
+        "counter-strike"
+      ],
+      "categories": [
+        "Gaming",
+        "Information",
+        "Sports"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "information_provider",
+        "components": [
+          {
+            "type": "action",
+            "name": "cs2_topic_detection",
+            "description": "检测CS2/CSGO相关话题讨论"
+          },
+          {
+            "type": "action",
+            "name": "live_match_monitor",
+            "description": "监控进行中的比赛并提供实时数据"
+          },
+          {
+            "type": "tool",
+            "name": "get_player_info",
+            "description": "获取选手详细信息和统计数据"
+          },
+          {
+            "type": "tool",
+            "name": "get_team_info",
+            "description": "���取战队信息和排名"
+          },
+          {
+            "type": "tool",
+            "name": "get_match_info",
+            "description": "获取比赛信息和结果"
+          }
+        ],
+        "features": [
+          "智能CS2/CSGO话题检测",
+          "选手数据和统计信息查询",
+          "战队排名和成员信息",
+          "实时比赛监控和数据推送",
+          "比赛结果和历史记录查询",
+          "数据缓存和API限流保护"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Unreal.My_Fucked_turtle_soup",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "海龟汤",
+      "version": "1.6.2",
+      "description": "支持游戏模式的海龟汤题目生成和互动。0.10+请移步 https://github.com/Heximiao/turtlesoup_plugin",
+      "author": {
+        "name": "Unreal"
+      },
+      "license": "MIT",
+      "keywords": [
+        "海龟汤",
+        "推理游戏",
+        "AI",
+        "娱乐"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/svila-ylym/My_Fucked_turtle_soup-Maimbot",
+      "repository_url": "https://github.com/svila-ylym/My_Fucked_turtle_soup-Maimbot",
+      "plugin_info": {
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "command",
+            "name": "HaiTurtleSoupCommand",
+            "description": "处理 /hgt 命令，生成海龟汤题目或进行游戏互动。用法: /hgt [问题|提示|整理线索|猜谜|退出|帮助|汤面|揭秘]"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "Windpicker-owo.maibot-screen-monitor-plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "screen_monitor_plugin",
+      "version": "1.0.0",
+      "description": "让麦麦视奸你",
+      "author": {
+        "name": "Windpicker_owo",
+        "url": "https://github.com/your-username"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.1",
+        "max_version": "0.10.2"
+      },
+      "homepage_url": "https://github.com/Windpicker-owo",
+      "repository_url": "https://github.com/Windpicker-owo/maibot-screen-monitor-plugin",
+      "keywords": [
+        "screen",
+        "monitor"
+      ],
+      "categories": [
+        "Monitor"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "tool",
+            "name": "screen_monitor",
+            "description": "定期截图分析用户屏幕变化"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "khIqwq.owner_auth_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "主人身份验证插件 (Owner Authentication Plugin)",
+      "version": "1.1.1",
+      "description": "为麦麦机器人提供主人身份验证功能，在思考流程前验证发言者身份，兼容0.10.2版本",
+      "author": {
+        "name": "风花叶",
+        "url": "https://github.com/khiqwq"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.2"
+      },
+      "homepage_url": "https://github.com/khiqwq/owner_auth_plugin",
+      "repository_url": "https://github.com/khiqwq/owner_auth_plugin",
+      "keywords": [
+        "authentication",
+        "owner",
+        "security",
+        "identity",
+        "patch"
+      ],
+      "categories": [
+        "Other"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "security",
+        "components": [
+          {
+            "type": "event_handler",
+            "name": "owner_auth_handler",
+            "description": "主人身份验证事件处理器",
+            "event_type": "on_message",
+            "weight": 1000,
+            "intercept_message": false
+          }
+        ],
+        "features": [
+          "主人身份验证",
+          "高优先级事件处理",
+          "思考流程前介入",
+          "安全身份识别",
+          "0.10.0版本兼容",
+          "补丁自动管理",
+          "插件卸载时自动清理"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Heximiao.turtlesoup_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "海龟汤游戏插件 - turtlesoup_plugin",
+      "display_name": "海龟汤游戏插件",
+      "version": "1.6.0",
+      "description": "一个交互式海龟汤（推理谜题）游戏插件，支持用户创建谜题、请求提示、提问并获得回答。目前支持0.10.1的mmc",
+      "author": {
+        "name": "Unreal and 何夕",
+        "url": "https://github.com/Heximiao/turtlesoup_plugin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.1",
+        "max_version": "0.10.1"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/Heximiao/turtlesoup_plugin",
+      "repository_url": "https://github.com/Heximiao/turtlesoup_plugin",
+      "keywords": [
+        "游戏",
+        "谜题",
+        "海龟汤",
+        "推理",
+        "互动"
+      ],
+      "categories": [
+        "娱乐",
+        "游戏"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "command",
+            "name": "hgt_create",
+            "description": "创建一个新的海龟汤谜题"
+          },
+          {
+            "type": "command",
+            "name": "hgt_hint",
+            "description": "请求一个提示"
+          },
+          {
+            "type": "command",
+            "name": "hgt_clue",
+            "description": "请求整理线索"
+          },
+          {
+            "type": "command",
+            "name": "hgt_question",
+            "description": "向谜题提问，获得是/否/无关的回答"
+          },
+          {
+            "type": "command",
+            "name": "hgt_answer",
+            "description": "揭晓当前海龟汤谜题的答案"
+          },
+          {
+            "type": "command",
+            "name": "hgt_status",
+            "description": "查看当前谜题状态"
+          }
+        ],
+        "features": [
+          "交互式谜题",
+          "海龟汤游戏",
+          "推理解谜"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Unreal.My_Fucked_100_People",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "MY_FUCKED_100_PEOPLE",
+      "version": "1.3.3",
+      "description": "群U群U，让我c一下，就一下，好不好嘛~",
+      "author": {
+        "name": "Unreal",
+        "url": "https://github.com/svila-ylym"
+      },
+      "license": "MIT",
+      "keywords": [
+        "qq",
+        "娱乐",
+        "哈基米",
+        "command"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "command",
+            "name": "CcbLoadQQCommand",
+            "description": "懂的都懂"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "Ghost-chu.maiplug_message_react",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "maiplug_message_react - 麦麦贴表情",
+      "version": "1.0.0",
+      "description": "通过 Napcat API 赋予麦麦对消息贴表情的能力",
+      "author": {
+        "name": "Ghost_chu",
+        "url": "https://github.com/Ghost-chu"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.1"
+      },
+      "homepage_url": "https://github.com/Ghost-chu/maiplug_message_react",
+      "repository_url": "https://github.com/Ghost-chu/maiplug_message_react",
+      "keywords": [
+        "reaction",
+        "group",
+        "interactive"
+      ],
+      "categories": [
+        "Entertainment & Interaction",
+        "Group Management"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "action",
+            "name": "msg_react",
+            "description": "向指定群聊消息添加(贴)反应表情"
+          }
+        ],
+        "features": [
+          "消息反应表情功能"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Unreal.World_War_Simulator",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "World War Simulator",
+      "version": "1.1.0",
+      "description": "“丞相，这一次还会败吗” - 一个战争的插件，玩家可以加入国家、战斗、结盟、拥有军衔和领土。使用此插件前需要阅读README",
+      "author": {
+        "name": "Unreal and 何夕",
+        "url": "https://github.com/svila-ylym"
+      },
+      "license": "GPLv3",
+      "keywords": [
+        "game",
+        "world war",
+        "simulation",
+        "nation",
+        "war",
+        "alliance",
+        "strategy"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "homepage_url": "https://github.com/svila-ylym/World_War_Simulator",
+      "repository_url": "https://github.com/svila-ylym/World_War_Simulator",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "plugin_info": {
+        "components": [
+          {
+            "type": "command",
+            "name": "join_command",
+            "description": "加入或创建一个国家"
+          },
+          {
+            "type": "command",
+            "name": "my_command",
+            "description": "查看自己的信息"
+          },
+          {
+            "type": "command",
+            "name": "friends_command",
+            "description": "查看当前的友军列表"
+          },
+          {
+            "type": "command",
+            "name": "pvp_command",
+            "description": "对指定国家发起战斗"
+          },
+          {
+            "type": "command",
+            "name": "conquer_command",
+            "description": "对指定国家发起掠夺领土"
+          },
+          {
+            "type": "command",
+            "name": "ally_command",
+            "description": "与指定国家结盟"
+          },
+          {
+            "type": "command",
+            "name": "withdraw_command",
+            "description": "解除与指定国家的盟友关系"
+          },
+          {
+            "type": "command",
+            "name": "deploy_command",
+            "description": "在自己的领土上驻军"
+          },
+          {
+            "type": "command",
+            "name": "transfer_command",
+            "description": "(领袖) 将国家兵力转移给同国玩家"
+          },
+          {
+            "type": "command",
+            "name": "appoint_command",
+            "description": "(领袖) 任命官职"
+          },
+          {
+            "type": "command",
+            "name": "set_ideology_command",
+            "description": "(领袖) 设置国家制度"
+          },
+          {
+            "type": "command",
+            "name": "help_command",
+            "description": "显示帮助菜单"
+          },
+          {
+            "type": "command",
+            "name": "nation_command",
+            "description": "查看自己国家的信息"
+          },
+          {
+            "type": "command",
+            "name": "world_command",
+            "description": "查看世界现状"
+          },
+          {
+            "type": "action",
+            "name": "random_event_action",
+            "description": "触发随机世界事件"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "CharTyr.MaiBot-DetailedExplanation-Plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦细说 (Detailed Explanation Plugin)",
+      "version": "1.1.0",
+      "description": "当需要详细解释科普、技术等复杂内容时，生成完整的长文本回复并智能分段发送",
+      "author": {
+        "name": "CharTyr",
+        "url": "https://github.com/CharTyr"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.10.2"
+      },
+      "homepage_url": "https://github.com/CharTyr/MaiBot-DetailedExplanation-Plugin",
+      "repository_url": "https://github.com/CharTyr/MaiBot-DetailedExplanation-Plugin",
+      "keywords": [
+        "explanation",
+        "detailed",
+        "science",
+        "education",
+        "long-text"
+      ],
+      "categories": [
+        "Education",
+        "Communication"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "communication",
+        "components": [
+          {
+            "type": "action",
+            "name": "detailed_explanation",
+            "description": "生成详细的长文本解释并智能分段发送",
+            "activation_modes": [
+              "keyword"
+            ],
+            "keywords": [
+              "详细",
+              "科普",
+              "解释",
+              "说明",
+              "原理",
+              "深入",
+              "具体",
+              "详细说说"
+            ]
+          }
+        ],
+        "features": [
+          "智能识别需要详细解释的场景",
+          "生成完整的长文本回复",
+          "根据内容长度智能分段发送",
+          "支持科普、技术解答等复杂内容",
+          "可配置分段参数和发送延迟"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Heximiao.repeat_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "repeat_plugin",
+      "display_name": "复读插件",
+      "version": "1.0.0",
+      "description": "一个简单的复读插件(和上面的复读插件不一样，无需更改代码)，可以检测群聊中连续重复的消息并自动进行复读，为群聊增添乐趣。",
+      "author": {
+        "name": "何夕",
+        "url": "https://github.com/Heximiao/repeat_plugin",
+        "email": "lcy1416603026@gmail.com"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.1",
+        "max_version": "0.10.2"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/Heximiao/repeat_plugin",
+      "repository_url": "https://github.com/Heximiao/repeat_plugin",
+      "keywords": [
+        "repeat",
+        "maimai",
+        "复读",
+        "梗",
+        "插件"
+      ],
+      "categories": [
+        "Fun",
+        "Interaction"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "chat",
+        "components": [
+          {
+            "type": "handler",
+            "name": "RepeatHandler",
+            "description": "复读处理器，用于检测群聊中的连续重复消息并进行复读。"
+          }
+        ],
+        "features": [
+          "复读",
+          "自动互动"
+        ]
+      }
+    }
+  },
+  {
+    "id": "trustnight.EpicFree_plugin-MaiMBot",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "Epic 限免游戏查询插件",
+      "version": "1.0.0",
+      "description": "获取 Epic Game Store 限免游戏资讯的插件，支持查询限免游戏功能。",
+      "author": {
+        "name": "trustnight",
+        "url": "https://github.com/trustnight"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/trustnight/EpicFree_plugin-MaiMBot",
+      "repository_url": "https://github.com/trustnight/EpicFree_plugin-MaiMBot",
+      "keywords": [
+        "实用工具",
+        "epic",
+        "free",
+        "限免",
+        "游戏",
+        "Epic Games"
+      ],
+      "categories": [
+        "Games",
+        "Utilities",
+        "Notifications"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "games",
+        "components": [
+          {
+            "type": "command",
+            "name": "epic_free",
+            "description": "查询Epic限免游戏"
+          }
+        ],
+        "features": [
+          "查询当前Epic限免游戏",
+          "丰富的游戏信息展示",
+          "支持自定义显示选项",
+          "灵活的配置控制"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bockegai.diary_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "日记插件 (Diary Plugin)",
+      "version": "2.1.0",
+      "description": "让麦麦能够回忆和记录每一天的聊天，生成个性化的日记内容(适配0.10.0及以上)",
+      "author": {
+        "name": "约瑟夫.k",
+        "url": "https://github.com/bockegai"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.2"
+      },
+      "homepage_url": "https://github.com/bockegai/diary_plugin",
+      "repository_url": "https://github.com/bockegai/diary_plugin",
+      "keywords": [
+        "日记",
+        "记录",
+        "回忆",
+        "QQ空间"
+      ],
+      "categories": [
+        "效率工具",
+        "社交"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "Heximiao.vote_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "vote_plugin",
+      "display_name": "群聊投票插件",
+      "version": "1.1.2",
+      "description": "一个通用的群聊投票插件（目前只有投票禁言）。支持发起投票、成员参与投票、并自动统计结果。",
+      "author": {
+        "name": "何夕",
+        "url": "https://github.com/Heximiao/vote_plugin",
+        "email": "lcy1416603026@gmail.com"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.10.2"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/Heximiao/vote_plugin",
+      "repository_url": "https://github.com/Heximiao/vote_plugin",
+      "keywords": [
+        "vote",
+        "poll",
+        "group",
+        "utility",
+        "投票",
+        "问卷",
+        "群聊",
+        "工具"
+      ],
+      "categories": [
+        "Utility",
+        "Group"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "chat",
+        "components": [
+          {
+            "type": "command",
+            "name": "vote",
+            "description": "发起一个群聊投票。"
+          },
+          {
+            "type": "command",
+            "name": "vote_help",
+            "description": "显示投票命令的使用说明。"
+          }
+        ],
+        "features": [
+          "发起投票",
+          "统计投票结果",
+          "群聊互动"
+        ]
+      }
+    }
+  },
+  {
+    "id": "CharTyr.Maibot_topic_finder_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦找话题插件 (Topic Finder Plugin)",
+      "version": "1.1.0",
+      "description": "通过RSS订阅与联网模型获取信息，可单独或同时启用；在固定时间或群聊静默时自动发起话题讨论",
+      "author": {
+        "name": "CharTyr",
+        "url": "https://github.com/CharTyr"
+      },
+      "license": "GPL-v3.0-or-later",
+      "host_application": {
+        "min_version": "0.11.0"
+      },
+      "homepage_url": "https://github.com/CharTyr/Maibot_topic_finder_plugin",
+      "repository_url": "https://github.com/CharTyr/Maibot_topic_finder_plugin",
+      "keywords": [
+        "topic",
+        "rss",
+        "chat",
+        "automation",
+        "discussion"
+      ],
+      "categories": [
+        "Chat Enhancement",
+        "Automation"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "enhancement",
+        "components": [
+          {
+            "type": "event_handler",
+            "name": "topic_scheduler",
+            "description": "定时话题调度器，负责在固定时间发起话题"
+          },
+          {
+            "type": "event_handler",
+            "name": "chat_silence_detector",
+            "description": "群聊静默检测器，检测群聊长时间无消息时发起话题"
+          },
+          {
+            "type": "action",
+            "name": "start_topic",
+            "description": "发起话题讨论的动作"
+          },
+          {
+            "type": "command",
+            "name": "topic_test",
+            "description": "测试话题生成功能",
+            "pattern": "/topic_test"
+          },
+          {
+            "type": "command",
+            "name": "topic_config",
+            "description": "查看话题插件配置",
+            "pattern": "/topic_config"
+          },
+          {
+            "type": "command",
+            "name": "topic_debug",
+            "description": "立即生成并发起话题（调试用）",
+            "pattern": "/topic_debug"
+          }
+        ],
+        "features": [
+          "RSS订阅话题源",
+          "联网大模型话题源",
+          "定时自动发起话题",
+          "群聊静默检测",
+          "智能话题生成",
+          "可配置时间和频率",
+          "多种话题来源支持"
+        ]
+      }
+    }
+  },
+  {
+    "id": "whitefox20011120.recall_manager_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "撤回插件 (Recall Manager Plugin)",
+      "version": "1.0.0",
+      "description": "群聊撤回管理插件",
+      "author": {
+        "name": "白狐",
+        "url": "https://github.com/whitefox20011120"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.3"
+      },
+      "homepage_url": "https://github.com/whitefox20011120",
+      "repository_url": "https://github.com/whitefox20011120/recall_manager_plugin",
+      "keywords": [
+        "recall",
+        "delete",
+        "moderation",
+        "admin",
+        "management",
+        "group"
+      ],
+      "categories": [
+        "Moderation",
+        "Group Management",
+        "Admin Tools"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "namchengwuqiu.gemini_drawer",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "Gemini 绘图",
+      "version": "1.0.0",
+      "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
+      "author": {
+        "name": "sakura桜花",
+        "url": "https://github.com/namchengwuqiu"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/namchengwuqiu/gemini_drawer",
+      "repository_url": "https://github.com/namchengwuqiu/gemini_drawer",
+      "keywords": [
+        "gemini",
+        "image",
+        "drawing",
+        "ai",
+        "绘图",
+        "画图"
+      ],
+      "categories": [
+        "Utilities",
+        "AI"
+      ],
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "command"
+      }
+    }
+  },
+  {
+    "id": "xun.sky_tools_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "光遇查询插件",
+      "version": "1.0.2",
+      "description": "光遇工具(sky_tools_plugin)",
+      "author": {
+        "name": "寻",
+        "url": "https://github.com/xc94188"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.2"
+      },
+      "homepage_url": "https://github.com/xc94188",
+      "repository_url": "https://github.com/xc94188/sky_tools_plugin",
+      "keywords": [
+        "光遇",
+        "身高查询",
+        "任务图片",
+        "游戏工具",
+        "Sky光遇"
+      ],
+      "categories": [
+        "Utility Tools"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "command",
+            "name": "skytools",
+            "description": "帮助命令"
+          },
+          {
+            "type": "command",
+            "name": "height",
+            "description": "身高查询命令"
+          },
+          {
+            "type": "command",
+            "name": "task",
+            "description": "任务图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "candle",
+            "description": "大蜡烛位置图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "ancestor",
+            "description": "复刻先祖信息获取命令"
+          },
+          {
+            "type": "command",
+            "name": "magic",
+            "description": "每日魔法图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "season_candle",
+            "description": "每日季蜡位置图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "calendar",
+            "description": "光遇日历图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "redstone",
+            "description": "红石位置图片获取命令"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "custom_commands_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "自定义命令插件 (CustomCommandsPlugin)",
+      "version": "1.5.2",
+      "description": "一个允许你通过聊天命令动态添加、删除、列出和触发自定义回复的强大插件",
+      "author": {
+        "name": "TaiYang",
+        "url": "https://github.com/TAIY2020"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.2",
+        "max_version": "0.11.1"
+      },
+      "homepage_url": "https://github.com/TAIY2020/custom_commands_plugin",
+      "repository_url": "https://github.com/TAIY2020/custom_commands_plugin",
+      "keywords": [
+        "custom command",
+        "dynamic reply",
+        "自定义命令",
+        "自动回复"
+      ],
+      "categories": [
+        "Utility Tools",
+        "Content Generation",
+        "Other"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false
+      }
+    }
+  },
+  {
+    "id": "SkillfulPainter.metaso_search_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "Metaso 搜索插件 (Metaso Search Plugin)",
+      "version": "1.0.0",
+      "description": "提供基于 Metaso 的网页和学术搜索功能。",
+      "author": {
+        "name": "fengin & SkillfulPainter",
+        "url": "https://github.com/SkillfulPainter"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.8.0"
+      },
+      "keywords": [
+        "search",
+        "metaso",
+        "web",
+        "scholar",
+        "tool"
+      ],
+      "categories": [
+        "Tools",
+        "Search"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "homepage_url": "https://github.com/SkillfulPainter/metaso_search_plugin",
+      "repository_url": "https://github.com/SkillfulPainter/metaso_search_plugin",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "tool",
+        "components": [
+          {
+            "type": "tool",
+            "name": "search_metaso",
+            "description": "从公开互联网上搜索即时性信息和通用知识。"
+          }
+        ],
+        "features": [
+          "网页搜索",
+          "学术搜索 (可配置)",
+          "AI总结",
+          "速率限制"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Heximiao.keep_awake_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "keep_awake_plugin",
+      "display_name": "防休眠插件 (Keep Awake)",
+      "version": "4.0.0",
+      "description": "【仅限Windows】通过调用 SetThreadExecutionState API 来阻止电脑进入休眠或睡眠状态，确保麦麦在后台持续运行。",
+      "author": {
+        "name": "何夕",
+        "url": "https://github.com/Heximiao/keep_awake_plugin",
+        "email": "lcy1416603026@gmail.com"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.10.3"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/Heximiao/keep_awake_plugin",
+      "repository_url": "https://github.com/Heximiao/keep_awake_plugin",
+      "keywords": [
+        "windows",
+        "keep-awake",
+        "防休眠",
+        "后台",
+        "automation"
+      ],
+      "categories": [
+        "System",
+        "Utility",
+        "Automation"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [
+          {
+            "type": "command",
+            "name": "KeepAwakeCommand",
+            "command_name": "/保持清醒",
+            "description": "控制防休眠后台任务的启动和停止。使用 `/保持清醒 on` 或 `/保持清醒 off`。"
+          }
+        ],
+        "features": [
+          "系统工具",
+          "Windows API 调用"
+        ]
+      }
+    }
+  },
+  {
+    "id": "wikinty.title_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "头衔赋予插件",
+      "version": "1.0.0",
+      "description": "当bot为群主的时候使用此插件可以为自己赋予头衔",
+      "host_application": {
+        "min_version": "0.10.2"
+      },
+      "author": {
+        "name": "[数据删除]の汤圆",
+        "url": "https://github.com/zky522482264"
+      },
+      "license": "MIT",
+      "homepage_url": "https://github.com/wikinty",
+      "repository_url": "https://github.com/wikinty/title_plugin",
+      "default_locale": "CN"
+    }
+  },
+  {
+    "id": "Kristen23557.MaiBot_Tarots_Plugin_REBORN",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "塔罗牌插件(0.10.3复活版)",
+      "version": "1.0.0",
+      "description": "提供高版本塔罗牌占卜功能，牌面为BiliBili幻星集",
+      "author": {
+        "name": "KArabella",
+        "url": "https://github.com/Kristen23557"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "keywords": [
+        "tarot",
+        "divination",
+        "moderation",
+        "bilibili"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "repository_url": "https://github.com/Kristen23557/MaiBot-Tarots-Plugin-REBORN/",
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "Kristen23557.Werewolves-Master-Plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "MaiBot-Tarots-Plugin-REBORN",
+      "version": "1.0.0",
+      "description": "让麦麦帮你开展惊险刺激（并不）的狼人杀游戏！",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "author": {
+        "name": "KArabella",
+        "url": "https://github.com/Kristen23557"
+      },
+      "license": "MPL-2.0",
+      "homepage_url": "https://github.com/Kristen23557",
+      "repository_url": "https://github.com/Kristen23557/Werewolves-Master-Plugin",
+      "default_locale": "CN"
+    }
+  },
+  {
+    "id": "TAIY2020.group_muter_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "群聊静音插件 (GroupMuterPlugin)",
+      "version": "1.3.0",
+      "description": "一个允许管理员通过聊天命令，让麦麦在指定群聊中临时进入“静音状态”的群组管理插件。",
+      "author": {
+        "name": "TaiYang",
+        "url": "https://github.com/TAIY2020"
+      },
+      "license": "AGPL-3.0",
+      "host_application": {
+        "min_version": "0.11.0",
+        "max_version": "0.11.1"
+      },
+      "homepage_url": "https://github.com/TAIY2020/group_muter_plugin",
+      "repository_url": "https://github.com/TAIY2020/group_muter_plugin",
+      "keywords": [
+        "Mute",
+        "静音",
+        "群聊"
+      ],
+      "categories": [
+        "Utility Tools",
+        "Content Generation",
+        "Other"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false
+      }
+    }
+  },
+  {
+    "id": "exynos967.animetrace_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "AnimeTrace 图片识别插件",
+      "version": "2.2.0",
+      "description": "接收图片并调用 AnimeTrace 识别，返回文本结果到 QQ",
+      "author": {
+        "name": "薄暝&晴空",
+        "url": "https://github.com/exynos967/animetrace_plugin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.8.0"
+      },
+      "homepage_url": "https://github.com/exynos967/animetrace_plugin",
+      "repository_url": "https://github.com/exynos967/animetrace_plugin",
+      "keywords": [
+        "anime",
+        "trace",
+        "image",
+        "recognition",
+        "搜番"
+      ],
+      "categories": [
+        "Multimedia",
+        "External Integration"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "service",
+        "components": [
+          {
+            "type": "tool",
+            "name": "anime_trace_search",
+            "description": "AnimeTrace image search tool"
+          }
         ]
       }
     }
