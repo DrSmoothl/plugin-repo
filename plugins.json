@@ -103,5 +103,9 @@
   {
     "id": "xuqian13.gsv2p_tts_plugin",
     "repositoryUrl": "https://github.com/xuqian13/gsv2p_tts_plugin"
+  },
+  {
+    "id": "xuqian13.context_clear_plugin",
+    "repositoryUrl": "https://github.com/xuqian13/context_clear_plugin"
   }
 ]
