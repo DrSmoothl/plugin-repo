@@ -1087,7 +1087,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "戳一戳插件 (Poke_Plugin)",
-      "version": "0.4.2",
+      "version": "0.4.3",
       "description": "适用于MaiBot 0.8.x or later 版本的戳一戳插件",
       "author": {
         "name": "Neorestim",
@@ -2852,6 +2852,50 @@
             "name": "anime_trace_search",
             "description": "AnimeTrace image search tool"
           }
+        ]
+      }
+    }
+  },
+  {
+    "id": "XXXxx7258.anan_sketchbook_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "安安素描本渲染插件 (Anan Sketchbook Renderer)",
+      "version": "0.1.0",
+      "description": "把麦麦输出渲染成素描本截图并发送图片回复。",
+      "author": {
+        "name": "晴空",
+        "url": "https://github.com/XXXxx7258"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/XXXxx7258/anan_sketchbook_plugin",
+      "repository_url": "https://github.com/XXXxx7258/anan_sketchbook_plugin",
+      "keywords": [
+        "sketchbook",
+        "render",
+        "anan"
+      ],
+      "categories": [
+        "Rendering",
+        "Fun"
+      ],
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "media",
+        "components": [
+          {
+            "type": "action",
+            "name": "anan_sketchbook_render",
+            "description": "把文字和可选图片绘制到安安素描本底图并发送图片回复"
+          }
+        ],
+        "features": [
+          "多表情差分底图",
+          "自动排版文本和图片",
+          "支持 LLM 控制的 mood / 文本 / 图片参数"
         ]
       }
     }
