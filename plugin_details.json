@@ -110,8 +110,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.10.2",
-        "max_version": "0.10.2"
+        "min_version": "0.11.0",
+        "max_version": "0.11.0"
       },
       "homepage_url": "https://github.com/schxar/doubao_search_plugin",
       "repository_url": "https://github.com/schxar/doubao_search_plugin",
@@ -434,36 +434,135 @@
     "id": "xuqian13.music_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "网易云音乐点歌插件",
-      "version": "1.0.2",
-      "description": "基于网易云音乐API的智能点歌插件，支持音乐搜索和点歌功能。",
+      "name": "entertainment_plugin",
+      "display_name": "娱乐插件",
+      "version": "1.0.0",
+      "description": "整合了看看腿、新闻、音乐等娱乐功能的统一插件，提供图片、新闻资讯、音乐点歌等多种娱乐服务",
       "author": {
-        "name": "靓仔",
-        "url": "https://github.com/xuqian13"
+        "name": "Augment Agent",
+        "url": "https://github.com/MaiM-with-u/maibot"
       },
-      "license": "AGPL-v3.0",
+      "license": "GPL-3.0-or-later",
       "host_application": {
         "min_version": "0.9.0",
         "max_version": "1.0.0"
       },
+      "homepage": "https://github.com/MaiM-with-u/maibot",
       "keywords": [
+        "娱乐",
+        "图片",
+        "新闻",
         "音乐",
         "点歌",
+        "看看腿",
+        "60秒",
         "网易云",
-        "music",
-        "song",
-        "播放",
-        "搜索",
-        "娱乐"
+        "QQ音乐"
       ],
       "categories": [
         "Entertainment",
         "Music",
-        "Utility"
+        "Information",
+        "Image"
       ],
-      "repository_url": "https://github.com/xuqian13/music_plugin",
-      "default_locale": "zh-CN",
-      "locales_path": "_locales"
+      "tags": [
+        "娱乐",
+        "图片",
+        "新闻",
+        "音乐",
+        "多功能"
+      ],
+      "dependencies": [],
+      "python_dependencies": [
+        "aiohttp",
+        "Pillow"
+      ],
+      "config_file": "config.toml",
+      "enabled": true,
+      "components": {
+        "tools": [
+          {
+            "name": "get_60s_news",
+            "description": "获取每天60秒读懂世界的最新新闻摘要"
+          },
+          {
+            "name": "get_today_in_history",
+            "description": "获取历史上的今天发生的重要事件"
+          },
+          {
+            "name": "play_music",
+            "description": "搜索并播放指定歌曲。当用户想听音乐、点歌或推荐歌曲时使用此工具"
+          }
+        ],
+        "actions": [
+          {
+            "name": "random_image_action",
+            "description": "获取随机腿部图片并发送",
+            "activation": "keyword",
+            "keywords": [
+              "看看腿",
+              "腿",
+              "看腿",
+              "康康腿",
+              "看看大长腿",
+              "大长腿"
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "name": "random_image_command",
+            "pattern": "/kankan [类型] 或 /看腿 [类型]",
+            "description": "获取随机腿部图片，支持指定类型"
+          },
+          {
+            "name": "news",
+            "pattern": "/news 或 /新闻",
+            "description": "查询每天60秒读懂世界新闻"
+          },
+          {
+            "name": "history",
+            "pattern": "/history 或 /历史",
+            "description": "查询历史上的今天"
+          },
+          {
+            "name": "music",
+            "pattern": "/music [音源] 歌曲名",
+            "description": "点歌命令，支持网易云和QQ音乐"
+          },
+          {
+            "name": "choose",
+            "pattern": "/choose 序号",
+            "description": "从搜索结果中选择歌曲"
+          },
+          {
+            "name": "quick_choose",
+            "pattern": "直接输入数字 1-10",
+            "description": "快捷选择歌曲"
+          }
+        ]
+      },
+      "features": {
+        "image": {
+          "enabled": true,
+          "description": "随机图片功能，支持关键词和命令触发"
+        },
+        "news": {
+          "enabled": true,
+          "description": "每天60秒新闻和历史上的今天"
+        },
+        "music": {
+          "enabled": true,
+          "description": "音乐点歌功能，支持网易云和QQ音乐"
+        }
+      },
+      "configuration": {
+        "modules": {
+          "image_enabled": true,
+          "news_enabled": true,
+          "music_enabled": true
+        }
+      }
     }
   },
   {
@@ -909,7 +1008,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "2.4.7",
+      "version": "2.4.8",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -2496,7 +2595,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "光遇查询插件",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "description": "光遇工具(sky_tools_plugin)",
       "author": {
         "name": "寻",
@@ -2510,10 +2609,12 @@
       "repository_url": "https://github.com/xc94188/sky_tools_plugin",
       "keywords": [
         "光遇",
+        "Sky",
         "身高查询",
-        "任务图片",
-        "游戏工具",
-        "Sky光遇"
+        "任务查询",
+        "大蜡烛",
+        "复刻先祖",
+        "每日魔法"
       ],
       "categories": [
         "Utility Tools"
@@ -2567,6 +2668,11 @@
             "type": "command",
             "name": "redstone",
             "description": "红石位置图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "skytest",
+            "description": "检测光遇服务器状态"
           }
         ]
       }
@@ -2586,7 +2692,7 @@
       "license": "MIT",
       "host_application": {
         "min_version": "0.10.2",
-        "max_version": "0.11.1"
+        "max_version": "0.11.2"
       },
       "homepage_url": "https://github.com/TAIY2020/custom_commands_plugin",
       "repository_url": "https://github.com/TAIY2020/custom_commands_plugin",
@@ -2792,7 +2898,7 @@
       "license": "AGPL-3.0",
       "host_application": {
         "min_version": "0.11.0",
-        "max_version": "0.11.1"
+        "max_version": "0.11.2"
       },
       "homepage_url": "https://github.com/TAIY2020/group_muter_plugin",
       "repository_url": "https://github.com/TAIY2020/group_muter_plugin",
@@ -2916,7 +3022,7 @@
       "repository_url": "https://github.com/saberlights/lolicon-setu-plugin",
       "host_application": {
         "name": "MaiBot",
-        "min_version": "0.8.0"
+        "min_version": "0.11.0"
       },
       "keywords": [
         "setu",
@@ -2948,7 +3054,7 @@
               "/setu - 获取1张随机图片",
               "/setu help - 显示帮助信息",
               "/setu 3 - 获取3张图片",
-              "/setu #萝莉 - 搜索萝莉标签",
+              "/setu #萝莉 - 搜索��莉标签",
               "/setu 原神 - 搜索原神关键词",
               "/setu #白丝,黑丝 - OR搜索",
               "/setu 5 #风景 横图 - 组合筛选"
@@ -3242,6 +3348,183 @@
           "神奇海螺 API 集成",
           "支持缓存与重试机制",
           "可配置请求参数"
+        ]
+      }
+    }
+  },
+  {
+    "id": "saberlights.chat_summary_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "聊天记录总结插件 (Chat Summary Plugin)",
+      "version": "1.1.0",
+      "description": "智能分析QQ群聊天记录并生成总结，支持精美图片输出。功能包括：群聊整体总结、单个用户总结（含AI个性标签、活跃时段、今日名言、心情指数）、智能群友称号、群聊金句提取、炫压抑指数分析、每日定时自动总结。",
+      "author": {
+        "name": "久远",
+        "url": "https://github.com/saberlights"
+      },
+      "license": "GPL-3.0-or-later",
+      "homepage_url": "https://github.com/saberlights/chat_summary_plugin",
+      "repository_url": "https://github.com/saberlights/chat_summary_plugin",
+      "host_application": {
+        "name": "MaiBot",
+        "min_version": "0.11.0"
+      },
+      "keywords": [
+        "chat",
+        "summary",
+        "analysis",
+        "ai",
+        "群聊",
+        "总结",
+        "分析",
+        "图片生成",
+        "定时任务"
+      ],
+      "categories": [
+        "Utilities",
+        "Analysis",
+        "AI"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [
+          {
+            "type": "command",
+            "name": "chat_summary",
+            "description": "生成聊天记录总结",
+            "pattern": "/summary",
+            "usage": "/summary [今天|昨天] 或 /summary @用户名/QQ号 [今天|昨天]"
+          },
+          {
+            "type": "event_handler",
+            "name": "daily_summary_handler",
+            "description": "每日定时自动生成群聊总结",
+            "event_type": "ON_START"
+          }
+        ],
+        "features": [
+          "群聊整体聊天记录总结",
+          "单个用户聊天记录总结",
+          "用户画像分析（AI生成个性标签、活跃时段、今日名言、心情指数）",
+          "支持多种时间范围（今天、昨天）",
+          "AI智能分析聊天内容",
+          "智能群友称号分析",
+          "群聊金句提取（群圣经）",
+          "炫压抑指数分析（AI评估用户发言情绪）",
+          "精美图片输出（失败时自动降级为文本）",
+          "每日定时自动总结",
+          "支持时区配置",
+          "24小时发言活跃度分布图表",
+          "支持自定义装饰图片"
+        ],
+        "dependencies": {
+          "python": [
+            {
+              "name": "Pillow",
+              "version": ">=8.0.0",
+              "required": true,
+              "description": "用于生成总结图片"
+            },
+            {
+              "name": "pytz",
+              "version": ">=2021.1",
+              "required": false,
+              "description": "用于时区支持（自动总结功能需要）"
+            }
+          ],
+          "plugins": []
+        },
+        "config": {
+          "config_file": "config.toml",
+          "has_default_config": true
+        }
+      },
+      "permissions": [
+        "database.messages.read",
+        "llm.generate",
+        "send.image",
+        "send.text"
+      ],
+      "changelog": {
+        "1.1.0": {
+          "date": "2025-11-15",
+          "changes": [
+            "新增用户画像分析功能（单个用户总结时）",
+            "新增AI生成个性标签（1-2个有趣的个性标签）",
+            "新增活跃时段分析（分析用户活跃时段特征）",
+            "新增今日名言提取（从用户发言中选取代表性语句）",
+            "新增心情指数评估（积极/中性/消极，0-100分及理由）",
+            "优化单个用户总结的图片布局"
+          ]
+        },
+        "1.0.0": {
+          "date": "2025-11-15",
+          "changes": [
+            "初始版本发布",
+            "支持群聊整体总结",
+            "支持单个用户总结",
+            "支持今天/昨天时间范围",
+            "支持智能群友称号分析",
+            "支持群聊金句提取（群圣经）",
+            "支持炫压抑指数分析（AI评估用户发言情绪）",
+            "支持精美图片输出（霓虹赛博朋克风格）",
+            "支持每日定时自动总结",
+            "支持24小时发言活跃度分布图表"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "Kristen23557.Maibot-Plugin-Manager",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "插件管理器 (Plugin Manager)",
+      "version": "1.1.2",
+      "description": "管理所有插件的更新和状态，支持自动更新和版本检查",
+      "author": {
+        "name": "KArabella",
+        "url": "https://github.com/Kristen23557"
+      },
+      "license": "MIT License",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/Kristen23557/",
+      "repository_url": "https://github.com/Kristen23557/Maibot-Plugin-Manager",
+      "keywords": [
+        "plugin",
+        "manager",
+        "update",
+        "admin",
+        "management"
+      ],
+      "categories": [
+        "System & Management"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "system",
+        "components": [
+          {
+            "type": "command",
+            "name": "PluginManagerCommand",
+            "description": "处理 /pm 命令，管理插件更新和状态",
+            "pattern": "/pm"
+          }
+        ],
+        "features": [
+          "插件列表查看",
+          "版本更新检查",
+          "自动更新管理",
+          "管理员权限控制",
+          "批量更新支持"
         ]
       }
     }
