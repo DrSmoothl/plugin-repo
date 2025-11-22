@@ -1206,7 +1206,7 @@
       "manifest_version": 1,
       "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.4.2",
+      "version": "0.4.3",
       "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
@@ -1215,8 +1215,7 @@
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0",
-        "max_version": "0.10.2"
+        "min_version": "0.9.0"
       },
       "entry": "plugin.py",
       "homepage_url": "https://github.com/Heximiao/acpoke_plugin",
@@ -1721,8 +1720,7 @@
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0",
-        "max_version": "0.11.0"
+        "min_version": "0.9.0"
       },
       "homepage_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
       "repository_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
@@ -2706,7 +2704,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.1.1",
+      "version": "1.1.8",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",

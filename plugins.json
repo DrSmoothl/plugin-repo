@@ -270,6 +270,10 @@
   {
     "id": "Kristen23557.Maibot-Plugin-Manager",
     "repositoryUrl": "https://github.com/Kristen23557/Maibot-Plugin-Manager"
+  },
+  {
+    "id": "Hug-Yo.weather_query_plugin",
+    "repositoryUrl": "https://github.com/Hug-Yo/weather_query_plugin"
   }
 ]
 
