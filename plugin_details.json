@@ -3135,5 +3135,588 @@
         ]
       }
     }
+  },
+  {
+    "id": "XXXxx7258.anan_sketchbook_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "安安素描本渲染插件 (Anan Sketchbook Renderer)",
+      "version": "0.1.0",
+      "description": "把麦麦输出渲染成素描本截图并发送图片回复。",
+      "author": {
+        "name": "晴空",
+        "url": "https://github.com/XXXxx7258"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/XXXxx7258/anan_sketchbook_plugin",
+      "repository_url": "https://github.com/XXXxx7258/anan_sketchbook_plugin",
+      "keywords": [
+        "sketchbook",
+        "render",
+        "anan"
+      ],
+      "categories": [
+        "Rendering",
+        "Fun"
+      ],
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "media",
+        "components": [
+          {
+            "type": "action",
+            "name": "anan_sketchbook_render",
+            "description": "把文字和可选图片绘制到安安素描本底图并发送图片回复"
+          }
+        ],
+        "features": [
+          "多表情差分底图",
+          "自动排版文本和图片",
+          "支持 LLM 控制的 mood / 文本 / 图片参数"
+        ]
+      }
+    }
+  },
+  {
+    "id": "saberlights.lolicon_setu_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "Lolicon色图插件 (Lolicon Setu Plugin)",
+      "version": "2.1.1",
+      "description": "基于Lolicon API v2的高质量Pixiv图片获取插件。支持标签AND/OR组合搜索、关键词模糊搜索、长宽比筛选、AI作品排除、合并转发格式等功能。",
+      "author": {
+        "name": "久远",
+        "url": "https://github.com/saberlights"
+      },
+      "license": "MIT",
+      "homepage_url": "https://github.com/saberlights/lolicon-setu-plugin",
+      "repository_url": "https://github.com/saberlights/lolicon-setu-plugin",
+      "host_application": {
+        "name": "MaiBot",
+        "min_version": "0.11.0"
+      },
+      "keywords": [
+        "setu",
+        "pixiv",
+        "lolicon",
+        "image",
+        "picture",
+        "图片",
+        "色图",
+        "搜索",
+        "API"
+      ],
+      "categories": [
+        "Entertainment",
+        "Image"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "entertainment",
+        "components": [
+          {
+            "type": "command",
+            "name": "setu",
+            "description": "从Lolicon API获取色图",
+            "pattern": "/setu",
+            "usage": "/setu [数量] [#标签] [关键词] [横图/竖图] [noai] [r18]",
+            "examples": [
+              "/setu - 获取1张随机图片",
+              "/setu help - 显示帮助信息",
+              "/setu 3 - 获取3张图片",
+              "/setu #萝莉 - 搜索��莉标签",
+              "/setu 原神 - 搜索原神关键词",
+              "/setu #白丝,黑丝 - OR搜索",
+              "/setu 5 #风景 横图 - 组合筛选"
+            ]
+          }
+        ],
+        "features": [
+          "Pixiv高质量图源",
+          "标签AND/OR组合搜索",
+          "关键词模糊搜索（标题、作者、标签）",
+          "作者UID筛选",
+          "长宽比筛选（横图/竖图/方图/自定义）",
+          "AI作品控制（可排除AI作品）",
+          "R18内容控制（可配置允许）",
+          "合并转发格式发送",
+          "命令冷却管理",
+          "简短命令格式（#标签）",
+          "内置help命令",
+          "灵活配置选项",
+          "自定义图片代理服务器"
+        ],
+        "dependencies": {
+          "python": [
+            {
+              "name": "aiohttp",
+              "version": ">=3.8.0",
+              "required": true,
+              "description": "异步HTTP客户端，用于调用Lolicon API"
+            }
+          ],
+          "plugins": [],
+          "external_api": [
+            {
+              "name": "Lolicon API v2",
+              "url": "https://api.lolicon.app",
+              "description": "提供Pixiv图片数据服务"
+            }
+          ]
+        },
+        "config": {
+          "config_file": "config.toml",
+          "has_default_config": true
+        }
+      },
+      "permissions": [
+        "send.image",
+        "send.text",
+        "send.forward",
+        "network.http"
+      ],
+      "changelog": {
+        "2.1.1": {
+          "date": "2025-11-10",
+          "changes": [
+            "修复合并转发消息发送者显示问题",
+            "优化代码结构和错误处理",
+            "改进配置校验逻辑"
+          ]
+        },
+        "2.1.0": {
+          "date": "2025-11-09",
+          "changes": [
+            "新增简短命令格式（#标签代替tag:标签）",
+            "支持直接输入文本作为关键词（无需keyword:前缀）",
+            "新增 /setu help 帮助命令",
+            "支持多种帮助命令格式（help/帮助/?/？）",
+            "新增proxy配置，可自定义图片反代服务器",
+            "保持向后兼容旧的冒号格式",
+            "更新文档和使用示例"
+          ]
+        },
+        "2.0.0": {
+          "date": "2025-11-09",
+          "changes": [
+            "重写插件，改用Lolicon API v2",
+            "新增标签AND/OR组合搜索",
+            "新增关键词模糊搜索",
+            "新增长宽比筛选功能",
+            "新增AI作品排除选项",
+            "支持合并转发格式",
+            "全新的文档和使用说明"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "xuqian13.context_clear_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "context_clear_plugin",
+      "display_name": "麦麦失忆插件 (上下文清除插件升级版)",
+      "version": "1.5.0",
+      "description": "让麦麦选择性失忆,忘记之前的对话~ 支持忘记全部/最近/指定时间前的记忆,新增完全失忆模式和状态机确认机制 (改进自上下文清除插件)",
+      "author": {
+        "name": "靓仔",
+        "url": "https://github.com/xuqian13"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.8.0",
+        "max_version": "1.0.0"
+      },
+      "keywords": [
+        "失忆",
+        "amnesia",
+        "forget",
+        "记忆",
+        "断片",
+        "clear",
+        "context",
+        "上下文",
+        "清除",
+        "total",
+        "确认",
+        "状态机"
+      ],
+      "categories": [
+        "Utility",
+        "Fun",
+        "Management"
+      ],
+      "repository_url": "https://github.com/xuqian13/context_clear_plugin",
+      "dependencies": [],
+      "python_dependencies": [],
+      "config_file": "config.toml",
+      "enabled": true,
+      "components": {
+        "commands": [
+          {
+            "name": "amnesia",
+            "pattern": "^/(失忆|忘记|断片|amnesia|forget|clear|清除上下文|清空上下文)",
+            "description": "让麦麦失忆忘记对话"
+          }
+        ],
+        "event_handlers": [
+          {
+            "name": "amnesia_confirm_handler",
+            "event_type": "ON_MESSAGE",
+            "description": "监听失忆确认消息"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "maimai_aivoice_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦AI语音插件",
+      "version": "1.0.1",
+      "author": {
+        "name": "yuexps",
+        "url": "https://github.com/yuexps"
+      },
+      "description": "麦麦AI语音功能扩展插件，通过NapCat使用QQ自带的AI文本转语音功能为麦麦提供语音消息发送能力",
+      "license": "MIT",
+      "homepage_url": "https://github.com/yuexps/maimai_aivoice_plugin",
+      "repository_url": "https://github.com/yuexps/maimai_aivoice_plugin",
+      "host_application": {
+        "min_version": "0.11.0"
+      },
+      "keywords": [
+        "ai",
+        "voice",
+        "qq",
+        "tts",
+        "napcat",
+        "aivoice"
+      ],
+      "categories": [
+        "Utility Tools",
+        "External Integration"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "tool",
+            "name": "get_ai_character_list",
+            "description": "仅在不知道声音角色ID或角色ID不可用时调用，用于获取最新的角色ID列表提供给send_ai_voice使用，查询当前QQ群可用的AI语音角色ID列表，供后续使用send_ai_voice时参考，返回的角色列表不会告诉用户。"
+          },
+          {
+            "type": "tool",
+            "name": "send_ai_voice",
+            "description": "发送AI语音消息，提供语音消息发送能力。（输入中文角色名和文本，自动匹配角色并发送）"
+          },
+          {
+            "type": "command",
+            "name": "list_ai_characters",
+            "description": "查询并显示当前群可用的AI语音角色（命令：/ai_roles 或 /ai角色 或 /语音角色）"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "magisk317.MaiMBot_LiteratureFeeder",
+    "manifest": {
+      "manifest_version": 1,
+      "package": "maimbot_literature_feeder",
+      "name": "MaiMBot Literature Feeder",
+      "version": "0.4.1",
+      "description": "聚合最新学术文献并向指定会话推送摘要的完整插件。",
+      "author": {
+        "name": "MaiMBot Community",
+        "url": "https://github.com/magisk317/MaiMBot_LiteratureFeeder"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.0"
+      },
+      "homepage_url": "https://github.com/magisk317/MaiMBot_LiteratureFeeder",
+      "repository_url": "https://github.com/magisk317/MaiMBot_LiteratureFeeder",
+      "documentation_url": "https://github.com/magisk317/MaiMBot_LiteratureFeeder#readme",
+      "issues_url": "https://github.com/magisk317/MaiMBot_LiteratureFeeder/issues",
+      "keywords": [
+        "literature",
+        "academic",
+        "rss",
+        "scheduler"
+      ],
+      "categories": [
+        "Knowledge",
+        "Automation"
+      ],
+      "default_locale": "zh-CN",
+      "entry_module": "plugin",
+      "entry_class": "LiteratureFeederPlugin",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "integration",
+        "components": [
+          {
+            "type": "event_handler",
+            "name": "literature_scheduler",
+            "description": "启动文献推送定时器"
+          },
+          {
+            "type": "command",
+            "name": "literature_preview",
+            "description": "预览当前配置下的文献推送计划",
+            "pattern": "/lit preview"
+          },
+          {
+            "type": "command",
+            "name": "literature_force_dispatch",
+            "description": "强制触发一次文献推送（忽略去重）",
+            "pattern": "/lit force"
+          },
+          {
+            "type": "command",
+            "name": "literature_search",
+            "description": "根据关键词搜索指定来源的最新文献",
+            "pattern": "/lit search"
+          }
+        ],
+        "features": [
+          "可配置的学术来源列表",
+          "可插拔的LLM摘要策略",
+          "定时推送调度框架（间隔模式与定时模式）",
+          "手动预览、搜索与强制推送命令"
+        ]
+      }
+    }
+  },
+  {
+    "id": "XXXxx7258.nbnhhsh_translate_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "神奇海螺缩写翻译插件 (Nbnhhsh Translator)",
+      "version": "1.0.0",
+      "description": "独立的神奇海螺 API 缩写翻译工具，支持缓存与重试机制。",
+      "author": {
+        "name": "晴空",
+        "url": "https://github.com/XXXxx7258"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/XXXxx7258/nbnhhsh_translate_plugin",
+      "repository_url": "https://github.com/XXXxx7258/nbnhhsh_translate_plugin",
+      "keywords": [
+        "translation",
+        "nbnhhsh",
+        "abbreviation"
+      ],
+      "categories": [
+        "Translation",
+        "Utilities"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "translation",
+        "components": [
+          {
+            "type": "tool",
+            "name": "abbreviation_translate",
+            "description": "翻译中文网络缩写词汇"
+          }
+        ],
+        "features": [
+          "神奇海螺 API 集成",
+          "支持缓存与重试机制",
+          "可配置请求参数"
+        ]
+      }
+    }
+  },
+  {
+    "id": "saberlights.chat_summary_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "聊天记录总结插件 (Chat Summary Plugin)",
+      "version": "1.1.0",
+      "description": "智能分析QQ群聊天记录并生成总结，支持精美图片输出。功能包括：群聊整体总结、单个用户总结（含AI个性标签、活跃时段、今日名言、心情指数）、智能群友称号、群聊金句提取、炫压抑指数分析、每日定时自动总结。",
+      "author": {
+        "name": "久远",
+        "url": "https://github.com/saberlights"
+      },
+      "license": "GPL-3.0-or-later",
+      "homepage_url": "https://github.com/saberlights/chat_summary_plugin",
+      "repository_url": "https://github.com/saberlights/chat_summary_plugin",
+      "host_application": {
+        "name": "MaiBot",
+        "min_version": "0.11.0"
+      },
+      "keywords": [
+        "chat",
+        "summary",
+        "analysis",
+        "ai",
+        "群聊",
+        "总结",
+        "分析",
+        "图片生成",
+        "定时任务"
+      ],
+      "categories": [
+        "Utilities",
+        "Analysis",
+        "AI"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [
+          {
+            "type": "command",
+            "name": "chat_summary",
+            "description": "生成聊天记录总结",
+            "pattern": "/summary",
+            "usage": "/summary [今天|昨天] 或 /summary @用户名/QQ号 [今天|昨天]"
+          },
+          {
+            "type": "event_handler",
+            "name": "daily_summary_handler",
+            "description": "每日定时自动生成群聊总结",
+            "event_type": "ON_START"
+          }
+        ],
+        "features": [
+          "群聊整体聊天记录总结",
+          "单个用户聊天记录总结",
+          "用户画像分析（AI生成个性标签、活跃时段、今日名言、心情指数）",
+          "支持多种时间范围（今天、昨天）",
+          "AI智能分析聊天内容",
+          "智能群友称号分析",
+          "群聊金句提取（群圣经）",
+          "炫压抑指数分析（AI评估用户发言情绪）",
+          "精美图片输出（失败时自动降级为文本）",
+          "每日定时自动总结",
+          "支持时区配置",
+          "24小时发言活跃度分布图表",
+          "支持自定义装饰图片"
+        ],
+        "dependencies": {
+          "python": [
+            {
+              "name": "Pillow",
+              "version": ">=8.0.0",
+              "required": true,
+              "description": "用于生成总结图片"
+            },
+            {
+              "name": "pytz",
+              "version": ">=2021.1",
+              "required": false,
+              "description": "用于时区支持（自动总结功能需要）"
+            }
+          ],
+          "plugins": []
+        },
+        "config": {
+          "config_file": "config.toml",
+          "has_default_config": true
+        }
+      },
+      "permissions": [
+        "database.messages.read",
+        "llm.generate",
+        "send.image",
+        "send.text"
+      ],
+      "changelog": {
+        "1.1.0": {
+          "date": "2025-11-15",
+          "changes": [
+            "新增用户画像分析功能（单个用户总结时）",
+            "新增AI生成个性标签（1-2个有趣的个性标签）",
+            "新增活跃时段分析（分析用户活跃时段特征）",
+            "新增今日名言提取（从用户发言中选取代表性语句）",
+            "新增心情指数评估（积极/中性/消极，0-100分及理由）",
+            "优化单个用户总结的图片布局"
+          ]
+        },
+        "1.0.0": {
+          "date": "2025-11-15",
+          "changes": [
+            "初始版本发布",
+            "支持群聊整体总结",
+            "支持单个用户总结",
+            "支持今天/昨天时间范围",
+            "支持智能群友称号分析",
+            "支持群聊金句提取（群圣经）",
+            "支持炫压抑指数分析（AI评估用户发言情绪）",
+            "支持精美图片输出（霓虹赛博朋克风格）",
+            "支持每日定时自动总结",
+            "支持24小时发言活跃度分布图表"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "Kristen23557.Maibot-Plugin-Manager",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "插件管理器 (Plugin Manager)",
+      "version": "1.1.2",
+      "description": "管理所有插件的更新和状态，支持自动更新和版本检查",
+      "author": {
+        "name": "KArabella",
+        "url": "https://github.com/Kristen23557"
+      },
+      "license": "MIT License",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/Kristen23557/",
+      "repository_url": "https://github.com/Kristen23557/Maibot-Plugin-Manager",
+      "keywords": [
+        "plugin",
+        "manager",
+        "update",
+        "admin",
+        "management"
+      ],
+      "categories": [
+        "System & Management"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "system",
+        "components": [
+          {
+            "type": "command",
+            "name": "PluginManagerCommand",
+            "description": "处理 /pm 命令，管理插件更新和状态",
+            "pattern": "/pm"
+          }
+        ],
+        "features": [
+          "插件列表查看",
+          "版本更新检查",
+          "自动更新管理",
+          "管理员权限控制",
+          "批量更新支持"
+        ]
+      }
+    }
   }
 ]
