@@ -1408,11 +1408,11 @@
       "description": "基于 MaiCore 的 AI 语音合成插件，支持多种音色、自动播报与命令触发，提供高质量的文本转语音功能。",
       "author": {
         "name": "靓仔",
-        "url": ""
+        "url": "https://github.com/xuqian13"
       },
       "license": "AGPL-3.0",
       "homepage_url": "",
-      "repository_url": "",
+      "repository_url": "https://github.com/xuqian13/ai_voice_plugin",
       "keywords": [
         "TTS",
         "语音合成",
@@ -1431,7 +1431,7 @@
       ],
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "1.0.0"
+        "max_version": "0.9.0"
       },
       "default_locale": "zh-CN",
       "plugin_info": {
@@ -1451,7 +1451,7 @@
         ],
         "features": [
           "多种音色支持（小新、妲己、酥心御姐等）",
-          "双模式触发（智能触发和手动触发）",
+          "双模式触发（智能触发和��动触发）",
           "音色别名映射，方便用户使用",
           "仅群聊可用，确保使用场景合适",
           "完善的错误处理和日志记录",
@@ -1544,7 +1544,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "1.0.0"
+        "max_version": "0.9.0"
       },
       "keywords": [
         "tts",
@@ -3329,7 +3329,7 @@
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
+        "min_version": "0.11.0",
         "max_version": "1.0.0"
       },
       "keywords": [
