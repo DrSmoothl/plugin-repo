@@ -270,6 +270,10 @@
   {
     "id": "Kristen23557.Maibot-Plugin-Manager",
     "repositoryUrl": "https://github.com/Kristen23557/Maibot-Plugin-Manager"
+  },
+  {
+    "id": "xuqian13.autonomous_planning_plugin",
+    "repositoryUrl": "https://github.com/xuqian13/autonomous_planning_plugin"
   }
 ]
 
