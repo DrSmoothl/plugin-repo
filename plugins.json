@@ -266,6 +266,10 @@
   {
     "id": "saberlights.chat_summary_plugin",
     "repositoryUrl": "https://github.com/saberlights/chat_summary_plugin"
+  },
+  {
+    "id": "saberlights.smart_segmentation_plugin",
+    "repositoryUrl": "https://github.com/saberlights/smart_segmentation_plugin.git"
   }
 ]
 
