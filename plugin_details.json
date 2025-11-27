@@ -110,8 +110,8 @@
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.10.2",
-        "max_version": "0.10.2"
+        "min_version": "0.11.0",
+        "max_version": "0.11.0"
       },
       "homepage_url": "https://github.com/schxar/doubao_search_plugin",
       "repository_url": "https://github.com/schxar/doubao_search_plugin",
@@ -398,72 +398,349 @@
     "id": "tts_voice_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "GPT-SoVITS 语音合成插件",
-      "version": "2.0.0",
-      "description": "基于 GPT-SoVITS 的文本转语音插件，支持多种语言和多风格语音合成。",
+      "name": "统一TTS语音合成插件",
+      "version": "3.0.0",
+      "description": "统一TTS语音合成插件，整合AI Voice、GSV2P、GPT-SoVITS三种后端引擎，提供灵活的语音合成能力。",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
       "license": "AGPL-v3.0",
-      "host_application": {
-        "min_version": "0.9.0",
-        "max_version": "1.0.0"
-      },
+      "homepage_url": "",
+      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
       "keywords": [
-        "tts",
+        "TTS",
         "语音合成",
         "文本转语音",
-        "gpt-sovits",
+        "AI语音",
+        "GSV2P",
+        "GPT-SoVITS",
+        "多后端",
         "语音",
         "朗读",
-        "多风格",
-        "语音播报"
+        "音色",
+        "语音播报",
+        "MaiCore"
       ],
       "categories": [
+        "语音",
+        "AI",
+        "聊天增强",
+        "娱乐",
         "Utility",
         "Communication",
         "Accessibility"
       ],
-      "repository_url": "https://github.com/xuqian13/tts_voice_plugin",
+      "host_application": {
+        "min_version": "0.11.0",
+        "max_version": "1.0.0"
+      },
       "default_locale": "zh-CN",
-      "locales_path": "_locales"
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "action",
+            "name": "unified_tts_action",
+            "description": "统一TTS语音合成Action，支持三种后端引擎智能切换，LLM自主判断触发"
+          },
+          {
+            "type": "command",
+            "name": "unified_tts_command",
+            "description": "统一TTS命令，支持/tts、/voice、/gsv2p多种命令格式，灵活指定后端和音色"
+          }
+        ],
+        "features": [
+          "支持三种TTS后端：AI Voice、GSV2P、GPT-SoVITS",
+          "AI Voice: MaiCore内置，简单快速，22+预设音色",
+          "GSV2P: 云端API，高质量合成，丰富的调节参数",
+          "GPT-SoVITS: 本地服务，高度定制化，多风格支持",
+          "智能触发模式（LLM自主判断）和手动命令模式",
+          "概率控制机制，避免语音回复过于频繁",
+          "智能语言检测（中文/英文/日文）",
+          "文本自动清理和网络用语转换",
+          "完善的错误处理和重试机制",
+          "灵活的配置系统，支持各后端独立配置"
+        ],
+        "dependencies": {
+          "python": [
+            "aiohttp"
+          ],
+          "system": [],
+          "plugins": []
+        },
+        "backend_info": {
+          "ai_voice": {
+            "provider": "MaiCore内置",
+            "endpoint": "AI_VOICE_SEND命令",
+            "authentication": "无需认证",
+            "limitations": "仅支持群聊使用",
+            "voices": "22+预设音色（小新、妲己、酥心御姐等）"
+          },
+          "gsv2p": {
+            "provider": "GSV2P云服务",
+            "endpoint": "https://gsv2p.acgnai.top/v1/audio/speech",
+            "authentication": "需要API Token",
+            "limitations": "API调用限制",
+            "features": "高质量合成、多语言支持、丰富参数调节"
+          },
+          "gpt_sovits": {
+            "provider": "本地GPT-SoVITS服务",
+            "endpoint": "http://127.0.0.1:9880",
+            "authentication": "无需认证",
+            "limitations": "需要本地部署服务",
+            "features": "高度定制化、多风格支持、模型权重切换"
+          }
+        }
+      },
+      "configuration": {
+        "config_file": "config.toml",
+        "auto_generate": true,
+        "sections": [
+          {
+            "name": "plugin",
+            "description": "插件基本配置"
+          },
+          {
+            "name": "general",
+            "description": "通用设置（默认后端、超时、文本长度等）"
+          },
+          {
+            "name": "components",
+            "description": "组件启用控制"
+          },
+          {
+            "name": "probability",
+            "description": "概率控制配置（避免语音回复过于频繁）"
+          },
+          {
+            "name": "ai_voice",
+            "description": "AI Voice后端配置（音色映射等）"
+          },
+          {
+            "name": "gsv2p",
+            "description": "GSV2P后端配置（API地址、Token、参数等）"
+          },
+          {
+            "name": "gpt_sovits",
+            "description": "GPT-SoVITS后端配置（服务地址、风格配置等）"
+          }
+        ]
+      },
+      "usage_examples": [
+        {
+          "type": "action",
+          "backend": "ai_voice",
+          "description": "LLM自动触发AI Voice语音回复",
+          "example": "用户：请用语音说\"你好世界\"\n机器人：[使用AI Voice自动生成语音文件并发送]"
+        },
+        {
+          "type": "command",
+          "backend": "ai_voice",
+          "description": "手动命令使用AI Voice",
+          "example": "/tts 你好世界 小新"
+        },
+        {
+          "type": "command",
+          "backend": "gsv2p",
+          "description": "手动命令使用GSV2P",
+          "example": "/gsv2p 今天天气不错"
+        },
+        {
+          "type": "command",
+          "backend": "gpt_sovits",
+          "description": "手动命令使用GPT-SoVITS",
+          "example": "/tts 测试一下 default gpt_sovits"
+        },
+        {
+          "type": "command",
+          "backend": "auto",
+          "description": "使用默认后端",
+          "example": "/tts 你好世界"
+        }
+      ],
+      "migration_info": {
+        "from_plugins": [
+          "ai_voice_plugin (v1.0.0)",
+          "gsv2p_tts_plugin (v1.0.0)",
+          "tts_voice_plugin (v2.0.0)"
+        ],
+        "migration_notes": [
+          "本插件整合了ai_voice_plugin、gsv2p_tts_plugin和旧版tts_voice_plugin的所有功能",
+          "配置文件需要重新生成，原配置需手动迁移",
+          "建议备份旧插件配置后再迁移",
+          "AI Voice音色映射保持兼容",
+          "GSV2P API配置需重新填写Token",
+          "GPT-SoVITS风格配置需要重新设置"
+        ]
+      }
     }
   },
   {
     "id": "xuqian13.music_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "网易云音乐点歌插件",
-      "version": "1.0.2",
-      "description": "基于网易云音乐API的智能点歌插件，支持音乐搜索和点歌功能。",
+      "name": "娱乐插件",
+      "version": "1.0.0",
+      "description": "整合了看看腿、新闻、音乐、AI绘图等娱乐功能的统一插件，提供图片、新闻资讯、音乐点歌、AI生成图片等多种娱乐服务",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.9.0",
+        "min_version": "0.11.0",
         "max_version": "1.0.0"
       },
+      "repository_url": "https://github.com/xuqian13/music_plugin",
       "keywords": [
+        "娱乐",
+        "图片",
+        "新闻",
         "音乐",
         "点歌",
+        "看看腿",
+        "60秒",
         "网易云",
-        "music",
-        "song",
-        "播放",
-        "搜索",
-        "娱乐"
+        "QQ音乐",
+        "VIP音质",
+        "聚合点歌",
+        "AI绘图",
+        "AI生成"
       ],
       "categories": [
         "Entertainment",
         "Music",
-        "Utility"
+        "Information",
+        "Image"
       ],
-      "repository_url": "https://github.com/xuqian13/music_plugin",
-      "default_locale": "zh-CN",
-      "locales_path": "_locales"
+      "tags": [
+        "娱乐",
+        "图片",
+        "新闻",
+        "音乐",
+        "AI绘图",
+        "多功能"
+      ],
+      "dependencies": [],
+      "python_dependencies": [
+        "aiohttp",
+        "Pillow"
+      ],
+      "config_file": "config.toml",
+      "enabled": true,
+      "components": {
+        "tools": [
+          {
+            "name": "get_60s_news",
+            "description": "获取每天60秒读懂世界的最新新闻摘要"
+          },
+          {
+            "name": "get_today_in_history",
+            "description": "获取历史上的今天发生的重要事件"
+          },
+          {
+            "name": "play_music",
+            "description": "搜索并播放指定歌曲。当用户想听音乐、点歌或推荐歌曲时使用���工具"
+          },
+          {
+            "name": "ai_draw",
+            "description": "根据描述词生成AI图片。当用户想要AI绘图或生成图片时使用此工具"
+          }
+        ],
+        "actions": [
+          {
+            "name": "random_image_action",
+            "description": "获取随机腿部图片并发送",
+            "activation": "keyword",
+            "keywords": [
+              "看看腿",
+              "腿",
+              "看腿",
+              "康康腿",
+              "看看大长腿",
+              "大长腿"
+            ]
+          },
+          {
+            "name": "ai_draw_action",
+            "description": "根据描述词生成AI图片",
+            "activation": "keyword",
+            "keywords": [
+              "AI绘图",
+              "ai绘图",
+              "画图",
+              "绘图",
+              "生成图片",
+              "画一张"
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "name": "random_image_command",
+            "pattern": "/kankan [类型] 或 /看腿 [类型]",
+            "description": "获取随机腿部图片，支持指定类型"
+          },
+          {
+            "name": "news",
+            "pattern": "/news 或 /新闻",
+            "description": "查询每天60秒读懂世界新闻"
+          },
+          {
+            "name": "history",
+            "pattern": "/history 或 /历史",
+            "description": "查询历史上的今天"
+          },
+          {
+            "name": "music",
+            "pattern": "/music [音源] 歌曲名",
+            "description": "点歌命令，支持网易云和QQ音乐"
+          },
+          {
+            "name": "choose",
+            "pattern": "/choose 序号",
+            "description": "从搜索结果中选择歌曲"
+          },
+          {
+            "name": "quick_choose",
+            "pattern": "直接输入数字 1-10",
+            "description": "快捷选择歌曲"
+          },
+          {
+            "name": "ai_draw",
+            "pattern": "/draw 或 /绘图 或 /画图 <描述词>",
+            "description": "AI绘图命令,根据描述词生成图片"
+          }
+        ]
+      },
+      "features": {
+        "image": {
+          "enabled": true,
+          "description": "随机图片功能，支持关键词和命令触发"
+        },
+        "news": {
+          "enabled": true,
+          "description": "每天60秒新闻和历史上的今天"
+        },
+        "music": {
+          "enabled": true,
+          "description": "音乐点歌功能，支持网易云和QQ音乐"
+        },
+        "ai_draw": {
+          "enabled": true,
+          "description": "AI绘图功能，根据描述词生成图片"
+        }
+      },
+      "configuration": {
+        "modules": {
+          "image_enabled": true,
+          "news_enabled": true,
+          "music_enabled": true,
+          "ai_draw_enabled": true
+        }
+      }
     }
   },
   {
@@ -753,7 +1030,7 @@
       "repository_url": "https://github.com/khiqwq/silent_mode_plugin",
       "host_application": {
         "min_version": "0.8.0",
-        "max_version": "0.10.0"
+        "max_version": "0.11.0"
       },
       "keywords": [
         "silent",
@@ -794,7 +1071,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "自定义智能多模型图片生成插件（custom_pic_plugin）",
-      "version": "3.1.2",
+      "version": "3.2.0",
       "description": "智能多模型图片生成插件，支持文生图和图生图自动识别。兼容OpenAI、豆包、Gemini、魔搭等多种API格式。提供命令式风格转换、模型配置管理、结果缓存等功能。支持动态模型切换、风格别名、调试开关等高级特性。",
       "author": {
         "name": "Ptrel，Rabbit",
@@ -909,7 +1186,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "2.4.8",
+      "version": "2.4.9",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -961,7 +1238,7 @@
       "manifest_version": 1,
       "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.4.2",
+      "version": "0.4.3",
       "description": "一个主动发起“戳一戳”的 MaiMai 插件，帮助你轻松与好友互动，自动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
@@ -970,8 +1247,7 @@
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0",
-        "max_version": "0.10.2"
+        "min_version": "0.9.0"
       },
       "entry": "plugin.py",
       "homepage_url": "https://github.com/Heximiao/acpoke_plugin",
@@ -1132,11 +1408,11 @@
       "description": "基于 MaiCore 的 AI 语音合成插件，支持多种音色、自动播报与命令触发，提供高质量的文本转语音功能。",
       "author": {
         "name": "靓仔",
-        "url": ""
+        "url": "https://github.com/xuqian13"
       },
       "license": "AGPL-3.0",
       "homepage_url": "",
-      "repository_url": "",
+      "repository_url": "https://github.com/xuqian13/ai_voice_plugin",
       "keywords": [
         "TTS",
         "语音合成",
@@ -1155,7 +1431,7 @@
       ],
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "1.0.0"
+        "max_version": "0.9.0"
       },
       "default_locale": "zh-CN",
       "plugin_info": {
@@ -1175,7 +1451,7 @@
         ],
         "features": [
           "多种音色支持（小新、妲己、酥心御姐等）",
-          "双模式触发（智能触发和手动触发）",
+          "双模式触发（智能触发和��动触发）",
           "音色别名映射，方便用户使用",
           "仅群聊可用，确保使用场景合适",
           "完善的错误处理和日志记录",
@@ -1268,7 +1544,7 @@
       "license": "AGPL-v3.0",
       "host_application": {
         "min_version": "0.9.0",
-        "max_version": "1.0.0"
+        "max_version": "0.9.0"
       },
       "keywords": [
         "tts",
@@ -1476,8 +1752,7 @@
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0",
-        "max_version": "0.11.0"
+        "min_version": "0.9.0"
       },
       "homepage_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
       "repository_url": "https://github.com/XinxInxiN0/bilibili_video_sender_plugin",
@@ -1770,24 +2045,25 @@
     "manifest": {
       "manifest_version": 1,
       "name": "主人身份验证插件 (Owner Authentication Plugin)",
-      "version": "1.1.1",
-      "description": "为麦麦机器人提供主人身份验证功能，在思考流程前验证发言者身份，兼容0.10.2版本",
+      "version": "1.3.0",
+      "description": "为麦麦机器人提供用户身份验证功能，支持多用户独立配置，自定义提示词模板，补丁代码分离，兼容MaiBot 0.11.5+",
       "author": {
         "name": "风花叶",
         "url": "https://github.com/khiqwq"
       },
       "license": "GPL-v3.0-or-later",
       "host_application": {
-        "min_version": "0.10.2"
+        "min_version": "0.11.5"
       },
-      "homepage_url": "https://github.com/khiqwq/owner_auth_plugin",
+      "homepage_url": "https://github.com/khiqwq",
       "repository_url": "https://github.com/khiqwq/owner_auth_plugin",
       "keywords": [
         "authentication",
-        "owner",
+        "user",
         "security",
         "identity",
-        "patch"
+        "multi-user",
+        "prompt-injection"
       ],
       "categories": [
         "Other"
@@ -1801,20 +2077,20 @@
           {
             "type": "event_handler",
             "name": "owner_auth_handler",
-            "description": "主人身份验证事件处理器",
+            "description": "用户身份验证事件处理器",
             "event_type": "on_message",
             "weight": 1000,
             "intercept_message": false
           }
         ],
         "features": [
-          "主人身份验证",
+          "用户身份验证",
+          "多用户独立配置",
+          "自定义提示词模板",
+          "User数量控制",
           "高优先级事件处理",
-          "思考流程前介入",
-          "安全身份识别",
-          "0.10.0版本兼容",
           "补丁自动管理",
-          "插件卸载时自动清理"
+          "Debug模式控制"
         ]
       }
     }
@@ -2461,7 +2737,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.0.0",
+      "version": "1.1.9",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -2488,7 +2764,8 @@
       "plugin_info": {
         "is_built_in": false,
         "plugin_type": "command"
-      }
+      },
+      "id": "sakura桜花.gemini_drawer"
     }
   },
   {
@@ -2496,7 +2773,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "光遇查询插件",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "description": "光遇工具(sky_tools_plugin)",
       "author": {
         "name": "寻",
@@ -2510,10 +2787,12 @@
       "repository_url": "https://github.com/xc94188/sky_tools_plugin",
       "keywords": [
         "光遇",
+        "Sky",
         "身高查询",
-        "任务图片",
-        "游戏工具",
-        "Sky光遇"
+        "任务查询",
+        "大蜡烛",
+        "复刻先祖",
+        "每日魔法"
       ],
       "categories": [
         "Utility Tools"
@@ -2567,6 +2846,11 @@
             "type": "command",
             "name": "redstone",
             "description": "红石位置图片获取命令"
+          },
+          {
+            "type": "command",
+            "name": "skytest",
+            "description": "检测光遇服务器状态"
           }
         ]
       }
@@ -2585,8 +2869,7 @@
       },
       "license": "MIT",
       "host_application": {
-        "min_version": "0.10.2",
-        "max_version": "0.11.2"
+        "min_version": "0.10.2"
       },
       "homepage_url": "https://github.com/TAIY2020/custom_commands_plugin",
       "repository_url": "https://github.com/TAIY2020/custom_commands_plugin",
@@ -2791,8 +3074,7 @@
       },
       "license": "AGPL-3.0",
       "host_application": {
-        "min_version": "0.11.0",
-        "max_version": "0.11.2"
+        "min_version": "0.11.0"
       },
       "homepage_url": "https://github.com/TAIY2020/group_muter_plugin",
       "repository_url": "https://github.com/TAIY2020/group_muter_plugin",
@@ -3040,26 +3322,35 @@
     "manifest": {
       "manifest_version": 1,
       "name": "context_clear_plugin",
-      "display_name": "上下文清除插件",
-      "version": "1.0.0",
-      "description": "清除对话上下文插件 - 提供命令清除指定聊天的消息历史",
+      "display_name": "麦麦失忆插件 (上下文清除插件升级版)",
+      "version": "1.5.0",
+      "description": "让麦麦选择性失忆,忘记之前的对话~ 支持忘记全部/最近/指定时间前的记忆,新增完全失忆模式和状态机确认机制 (改进自上下文清除插件)",
       "author": {
         "name": "靓仔",
         "url": "https://github.com/xuqian13"
       },
       "license": "AGPL-v3.0",
       "host_application": {
-        "min_version": "0.8.0",
+        "min_version": "0.11.0",
         "max_version": "1.0.0"
       },
       "keywords": [
-        "context",
+        "失忆",
+        "amnesia",
+        "forget",
+        "记忆",
+        "断片",
         "clear",
+        "context",
         "上下文",
-        "清除"
+        "清除",
+        "total",
+        "确认",
+        "状态机"
       ],
       "categories": [
         "Utility",
+        "Fun",
         "Management"
       ],
       "repository_url": "https://github.com/xuqian13/context_clear_plugin",
@@ -3070,9 +3361,16 @@
       "components": {
         "commands": [
           {
-            "name": "clear_context",
-            "pattern": "^/(clear|清除上下文|清空上下文)",
-            "description": "清除聊天上下文命令"
+            "name": "amnesia",
+            "pattern": "^/(失忆|忘记|断片|amnesia|forget|clear|清除上下文|清空上下文)",
+            "description": "让麦麦失忆忘记对话"
+          }
+        ],
+        "event_handlers": [
+          {
+            "name": "amnesia_confirm_handler",
+            "event_type": "ON_MESSAGE",
+            "description": "监听失忆确认消息"
           }
         ]
       }
@@ -3244,6 +3542,385 @@
           "可配置请求参数"
         ]
       }
+    }
+  },
+  {
+    "id": "saberlights.chat_summary_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "聊天记录总结插件 (Chat Summary Plugin)",
+      "version": "1.1.0",
+      "description": "智能分析QQ群聊天记录并生成总结，支持精美图片输出。功能包括：群聊整体总结、单个用户总结（含AI个性标签、活跃时段、今日名言、心情指数）、智能群友称号、群聊金句提取、炫压抑指数分析、每日定时自动总结。",
+      "author": {
+        "name": "久远",
+        "url": "https://github.com/saberlights"
+      },
+      "license": "GPL-3.0-or-later",
+      "homepage_url": "https://github.com/saberlights/chat_summary_plugin",
+      "repository_url": "https://github.com/saberlights/chat_summary_plugin",
+      "host_application": {
+        "name": "MaiBot",
+        "min_version": "0.11.0"
+      },
+      "keywords": [
+        "chat",
+        "summary",
+        "analysis",
+        "ai",
+        "群聊",
+        "总结",
+        "分析",
+        "图片生成",
+        "定时任务"
+      ],
+      "categories": [
+        "Utilities",
+        "Analysis",
+        "AI"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [
+          {
+            "type": "command",
+            "name": "chat_summary",
+            "description": "生成聊天记录总结",
+            "pattern": "/summary",
+            "usage": "/summary [今天|昨天] 或 /summary @用户名/QQ号 [今天|昨天]"
+          },
+          {
+            "type": "event_handler",
+            "name": "daily_summary_handler",
+            "description": "每日定时自动生成群聊总结",
+            "event_type": "ON_START"
+          }
+        ],
+        "features": [
+          "群聊整体聊天记录总结",
+          "单个用户聊天记录总结",
+          "用户画像分析（AI生成个性标签、活跃时段、今日名言、心情指数）",
+          "支持多种时间范围（今天、昨天）",
+          "AI智能分析聊天内容",
+          "智能群友称号分析",
+          "群聊金句提取（群圣经）",
+          "炫压抑指数分析（AI评估用户发言情绪）",
+          "精美图片输出（失败时自动降级为文本）",
+          "每日定时自动总结",
+          "支持时区配置",
+          "24小时发言活跃度分布图表",
+          "支持自定义装饰图片"
+        ],
+        "dependencies": {
+          "python": [
+            {
+              "name": "Pillow",
+              "version": ">=8.0.0",
+              "required": true,
+              "description": "用于生成总结图片"
+            },
+            {
+              "name": "pytz",
+              "version": ">=2021.1",
+              "required": false,
+              "description": "用于时区支持（自动总结功能需要）"
+            }
+          ],
+          "plugins": []
+        },
+        "config": {
+          "config_file": "config.toml",
+          "has_default_config": true
+        }
+      },
+      "permissions": [
+        "database.messages.read",
+        "llm.generate",
+        "send.image",
+        "send.text"
+      ],
+      "changelog": {
+        "1.1.0": {
+          "date": "2025-11-15",
+          "changes": [
+            "新增用户画像分析功能（单个用户总结时）",
+            "新增AI生成个性标签（1-2个有趣的个性标签）",
+            "新增活跃时段分析（分析用户活跃时段特征）",
+            "新增今日名言提取（从用户发言中选取代表性语句）",
+            "新增心情指数评估（积极/中性/消极，0-100分及理由）",
+            "优化单个用户总结的图片布局"
+          ]
+        },
+        "1.0.0": {
+          "date": "2025-11-15",
+          "changes": [
+            "初始版本发布",
+            "支持群聊整体总结",
+            "支持单个用户总结",
+            "支持今天/昨天时间范围",
+            "支持智能群友称号分析",
+            "支持群聊金句提取（群圣经）",
+            "支持炫压抑指数分析（AI评估用户发言情绪）",
+            "支持精美图片输出（霓虹赛博朋克风格）",
+            "支持每日定时自动总结",
+            "支持24小时发言活跃度分布图表"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "Kristen23557.Maibot-Plugin-Manager",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "插件管理器 (Plugin Manager)",
+      "version": "1.1.2",
+      "description": "管理所有插件的更新和状态，支持自动更新和版本检查",
+      "author": {
+        "name": "KArabella",
+        "url": "https://github.com/Kristen23557"
+      },
+      "license": "MIT License",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/Kristen23557/",
+      "repository_url": "https://github.com/Kristen23557/Maibot-Plugin-Manager",
+      "keywords": [
+        "plugin",
+        "manager",
+        "update",
+        "admin",
+        "management"
+      ],
+      "categories": [
+        "System & Management"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "system",
+        "components": [
+          {
+            "type": "command",
+            "name": "PluginManagerCommand",
+            "description": "处理 /pm 命令，管理插件更新和状态",
+            "pattern": "/pm"
+          }
+        ],
+        "features": [
+          "插件列表查看",
+          "版本更新检查",
+          "自动更新管理",
+          "管理员权限控制",
+          "批量更新支持"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Shiroha135.GPT-SoVITS-v2-TTS-Plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "GPT-SoVITS-V2 TTS插件",
+      "version": "1.8.15",
+      "description": "基于 GPT-SoVITS-V2 的文本转语音插件，支持多语言转换，可以通过关键词，指令启动",
+      "author": {
+        "name": "HatsuYukiAya初雪绫",
+        "url": "https://github.com/Shiroha135"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.9.0",
+        "max_version": "0.11.2"
+      },
+      "homepage_url": "https://github.com/Shiroha135",
+      "repository_url": "https://github.com/Shiroha135/GPT-SoVITS-v2-TTS-Plugin",
+      "keywords": [
+        "TTS",
+        "语音合成",
+        "GPT-SoVITS-V2",
+        "指令开关",
+        "多语言"
+      ],
+      "categories": [
+        "语音",
+        "聊天增强"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "action",
+            "name": "tts_voice_action",
+            "description": "将文本内容转换为语音并发送，/vitsmode on启用全局TTS模式"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "xuqian13.autonomous_planning_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦自主规划插件",
+      "version": "3.0.0",
+      "description": "让麦麦具备自主规划能力，通过LLM智能生成符合人设的日常生活日程，支持定时生成和对话注入。v3.0全面优化：性能提升70%，稳定性提升50%。",
+      "author": {
+        "name": "靓仔",
+        "url": "https://github.com/xuqian13"
+      },
+      "license": "AGPL-3.0",
+      "homepage_url": "",
+      "repository_url": "https://github.com/xuqian13/autonomous_planning_plugin",
+      "keywords": [
+        "自主规划",
+        "日程管理",
+        "目标管理",
+        "LLM",
+        "AI Agent",
+        "定时任务",
+        "人设",
+        "生活模拟",
+        "MaiCore"
+      ],
+      "categories": [
+        "AI",
+        "自动化",
+        "智能体",
+        "聊天增强",
+        "Utility"
+      ],
+      "host_application": {
+        "min_version": "0.11.0",
+        "max_version": "1.0.0"
+      },
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "tool",
+            "name": "manage_goal",
+            "description": "目标管理工具，支持创建、查看、更新、暂停、恢复、完成、取消、删除目标"
+          },
+          {
+            "type": "tool",
+            "name": "generate_schedule",
+            "description": "日程生成工具，自动生成每日/每周/每月计划"
+          },
+          {
+            "type": "tool",
+            "name": "get_planning_status",
+            "description": "规划状态查询工具，查看活跃目标和执行历史"
+          },
+          {
+            "type": "tool",
+            "name": "apply_schedule",
+            "description": "日程应用工具，将日程项转换为可执行目标"
+          },
+          {
+            "type": "command",
+            "name": "planning_command",
+            "description": "规划管理命令，支持/plan status、/plan list、/plan clear、/plan delete等"
+          },
+          {
+            "type": "event_handler",
+            "name": "autonomous_planner",
+            "description": "自主规划事件处理器，定期清理过期目标"
+          },
+          {
+            "type": "event_handler",
+            "name": "schedule_inject_handler",
+            "description": "日程注入事件处理器，在LLM调用前注入当前日程信息"
+          }
+        ],
+        "features": [
+          "🚀 v3.0性能优化：数据库查询提升84%，缓存命中率提升42%",
+          "🛡️ 智能错误处理：配额超限自动识别，减少50%无效重试",
+          "🔒 安全输入验证：100%防御已知注入攻击",
+          "⚡ 并发优化：超时任务主动取消，生成速度提升50%",
+          "🎨 自定义Prompt：支持配置自定义提示词影响日程生成",
+          "🤖 基于Bot人设智能生成每日日程（8-15个活动）",
+          "⏰ 定时自动生成（默认每天00:30）",
+          "💬 对话中自然提到当前活动（如\"这会儿正吃午饭呢\"）",
+          "📊 支持文字和图片两种日程展示格式",
+          "🔄 多轮生成机制，可选启用提升质量",
+          "💾 LRU缓存优化，减少重复计算",
+          "🗑️ 自动清理过期目标（默认保留30天）",
+          "🌏 时区支持（默认Asia/Shanghai）",
+          "🧠 智能注入判断，仅在涉及时间的对话中注入"
+        ],
+        "dependencies": {
+          "python": [
+            "pillow"
+          ],
+          "system": [],
+          "plugins": []
+        }
+      },
+      "configuration": {
+        "config_file": "config.toml",
+        "auto_generate": true,
+        "sections": [
+          {
+            "name": "plugin",
+            "description": "插件基本配置（启用开关）"
+          },
+          {
+            "name": "autonomous_planning",
+            "description": "自主规划配置（清理间隔、保留天数）"
+          },
+          {
+            "name": "autonomous_planning.schedule",
+            "description": "日程生成配置（注入开关、生成参数、定时配置、缓存配置、自定义prompt）"
+          }
+        ]
+      },
+      "usage_examples": [
+        {
+          "type": "conversation",
+          "description": "自动生成日程",
+          "example": "用户：帮我生成今天的日程\n机器人：[LLM基于人设生成8-15个活动并保存]"
+        },
+        {
+          "type": "command",
+          "description": "���看日程（文字格式）",
+          "example": "/plan status"
+        },
+        {
+          "type": "command",
+          "description": "查看日程（图片格式）",
+          "example": "/plan list"
+        },
+        {
+          "type": "command",
+          "description": "清理旧日程",
+          "example": "/plan clear"
+        },
+        {
+          "type": "command",
+          "description": "删除指定日程",
+          "example": "/plan delete 1"
+        },
+        {
+          "type": "inject",
+          "description": "对话中自然提到当前活动",
+          "example": "用户：在干嘛？\n机器人：这会儿正吃午饭呢~"
+        },
+        {
+          "type": "config",
+          "description": "自定义日程生成风格",
+          "example": "配置custom_prompt = \"今天想多运动，至少3小时运动时间\""
+        }
+      ]
     }
   }
 ]
