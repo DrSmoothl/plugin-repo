@@ -290,6 +290,10 @@
   {
     "id": "Hug_Yo.weather_query_plugin",
     "repositoryUrl": "https://github.com/Hug-Yo/weather_query_plugin"
+  },
+  {
+    "id": "Hug_Yo.wife_plugin",
+    "repositoryUrl": "https://github.com/Hug-Yo/wife_plugin"
   }
 ]
 
