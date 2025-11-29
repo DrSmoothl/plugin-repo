@@ -290,7 +290,12 @@
   {
     "id": "Hug_Yo.weather_query_plugin",
     "repositoryUrl": "https://github.com/Hug-Yo/weather_query_plugin"
+  },
+  {
+    "id": "Kmaj.expenses_summary",
+    "repositoryUrl": "https://github.com/Kmaj1st/expenses_summary"
   }
 ]
+
 
 
