@@ -4231,5 +4231,71 @@
         "抽奖工具"
       ]
     }
+  },
+  {
+    "id": "CharTyr.MaiBot_MCPBridgePlugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "MCP桥接插件",
+      "version": "1.1.1",
+      "description": "将 MCP (Model Context Protocol) 服务器的工具桥接到 MaiBot，使麦麦能够调用外部 MCP 工具",
+      "author": {
+        "name": "CharTyr",
+        "url": "https://github.com/CharTyr"
+      },
+      "license": "AGPL-3.0",
+      "host_application": {
+        "min_version": "0.11.6"
+      },
+      "homepage_url": "https://github.com/CharTyr/MaiBot_MCPBridgePlugin",
+      "repository_url": "https://github.com/CharTyr/MaiBot_MCPBridgePlugin",
+      "keywords": [
+        "mcp",
+        "bridge",
+        "tool",
+        "integration"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "components": [],
+        "features": [
+          "支持多个 MCP 服务器",
+          "自动发现并注册 MCP 工具",
+          "支持 stdio、SSE、HTTP 三种传输方式",
+          "工具参数自动转换",
+          "心跳检测与自动重连",
+          "调用统计（次数、成功率、耗时）",
+          "WebUI 配置支持"
+        ]
+      },
+      "id": "MaiBot Community.MCPBridgePlugin"
+    }
+  },
+  {
+    "id": "heitiehu-beep.impression_affection_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "印象和好感度系统插件",
+      "version": "2.1.0",
+      "description": "为麦麦添加动态印象和好感度系统，LLM生成自然语言印象、使用独立的数据库",
+      "author": {
+        "name": "heitiehu-beep",
+        "url": "https://github.com/heitiehu-beep"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.0"
+      },
+      "repository_url": "https://github.com/heitiehu-beep/impression_affection_plugin",
+      "keywords": [
+        "记忆系统",
+        "好感度",
+        "印象"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ]
+    }
   }
 ]

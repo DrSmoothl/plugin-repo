@@ -302,6 +302,12 @@
   {
     "id": "yumemi1.jm_plugin",
     "repositoryUrl": "https://github.com/yumemi1/jm_plugin"
+    "id": "CharTyr.MaiBot_MCPBridgePlugin",
+    "repositoryUrl": "https://github.com/CharTyr/MaiBot_MCPBridgePlugin"
+  },
+  {
+    "id": "heitiehu-beep.impression_affection_plugin",
+    "repositoryUrl": "https://github.com/heitiehu-beep/impression_affection_plugin"
   }
 ]
 
