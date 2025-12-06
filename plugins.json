@@ -306,6 +306,10 @@
   {
     "id": "heitiehu-beep.impression_affection_plugin",
     "repositoryUrl": "https://github.com/heitiehu-beep/impression_affection_plugin"
+  },
+  {
+    "id": "pulsarmatrix.servercmd_plugin",
+    "repositoryUrl":"https://github.com/pulsarmatrix/servercmd_plugin"
   }
 ]
 
