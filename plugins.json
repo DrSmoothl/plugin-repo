@@ -159,6 +159,10 @@
   {
     "id": "CharTyr.Maibot_hltv_plugin",
     "repositoryUrl": "https://github.com/CharTyr/Maibot_hltv_plugin"
+  },
+  {
+    "id": "风花叶.maibot_chat_summary",
+    "repositoryUrl": "https://github.com/khiqwq/maibot_chat_summary"
   }
 ]
 
