@@ -338,6 +338,12 @@
   {
     "id": "Rankgice.comfyui-maibot-plugin",
     "repositoryUrl": "https://github.com/Rankgice/comfyui-maibot-plugin"
+  },
+  {
+    "id": "MorningFeather.safebooru_plugin",
+    "repositoryUrl": "https://github.com/MorningFeather/safebooru_plugin"
   }
 ]
+
+
 
